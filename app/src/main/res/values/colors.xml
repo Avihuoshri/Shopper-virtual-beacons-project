@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorShopperLogo">#015F87</color>
+    <color name="colorShopperLogoDark">#015C70</color>
+    <color name="colorSectionListTitle">#99ccff</color>
+    <color name="pantone">#ED2939</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#23AAFF</color>
+</resources>

@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "102585912131",
+    "firebase_url": "https://shopper-ab444.firebaseio.com",
+    "project_id": "shopper-ab444",
+    "storage_bucket": "shopper-ab444.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102585912131:android:0b911b8f0aac4812ed7df6",
+        "android_client_info": {
+          "package_name": "com.arielu.shopper.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102585912131-j7cffjo527764r411vkiimgg9jp024np.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arielu.shopper.demo",
+            "certificate_hash": "64b54dc0af7b2b32a22a5b17a7651dcba3cc9acf"
+          }
+        },
+        {
+          "client_id": "102585912131-9h5ui4m3mki1rbqjp16hjuvk64ptgq8p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arielu.shopper.demo",
+            "certificate_hash": "91cd0e270febee99abf25a185272f9bfe89208e8"
+          }
+        },
+        {
+          "client_id": "102585912131-j17bvsaae8171fq18v9ej10vb5pvnjl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP4Xg9znUWUCZ1HQ1wQcxoizl099jp37I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102585912131-j17bvsaae8171fq18v9ej10vb5pvnjl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

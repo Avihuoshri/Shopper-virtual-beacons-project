@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/branch"
+        android:title="Branch"
+        android:orderInCategory="100"
+        android:icon="@drawable/round_shopping_cart_24"
+        app:showAsAction="always"/>
+    <item android:id="@+id/user_permission"
+        android:title="Permission"
+        android:orderInCategory="100"
+        android:icon="@drawable/permission3"
+        app:showAsAction="always"/>
+</menu>

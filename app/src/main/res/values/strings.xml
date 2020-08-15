@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Shopper</string>
+    <string name="new_list_title">New list</string>
+    <string name="dialog_ok">Ok</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="list_name">Enter new list name</string>
+    <string name="ttl">Shopper</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_password">Password</string>
+    <string name="login">Login</string>
+    <string name="register_here">Register</string>
+    <string name="forgot_password">Forgot</string>
+    <string name="sales">Sale</string>
+    <string name="name_text">Name</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Enter password length of six</string>
+    <string name="password_confirm_text">Re-enter password for confirmation</string>
+    <string name="phone_number_text">Phone Number</string>
+    <string name="name_field">Enter name here</string>
+    <string name="email_field">Enter email here</string>
+    <string name="password_field">Enter password here</string>
+    <string name="confirm_password_field">Enter confirm password here</string>
+    <string name="phone_number_field">Enter phone number here</string>
+    <string-array name="spinner_items">
+        <item>Customer</item>
+        <item>Worker</item>
+    </string-array>
+    <array name="list">
+        <item>Home</item>
+        <item>BBQ</item>
+        <item>Home2</item>
+    </array>
+    <string name="logout">Logout</string>
+    <string name="message">Message</string>
+    <string name="delete">Delete</string>
+    <string name="delete_message">Are you sure want to delete?</string>
+    <string name="accept">Accept</string>
+    <string-array name="spinner_quantity">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+</resources>
