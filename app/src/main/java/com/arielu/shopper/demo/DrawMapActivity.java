@@ -24,19 +24,16 @@ public class DrawMapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_draw_map);
+
         intent = getIntent();
         tracker = (PathTracker) intent.getSerializableExtra("tracker");
 
         mlineView = new LineView(this);
         mlineView.setBackgroundResource(R.drawable.map);
         setContentView(mlineView);
-        //mlineView = findViewById(R.id.LineView) ;
 
         addLines();
-
         mlineView.draw();
-
     }
 
     private void addLines() {
@@ -71,16 +68,11 @@ public class DrawMapActivity extends AppCompatActivity {
             }
 
             //iterate tail node points
-            if (node != tracker.list.tail)
-                Log.d("error: ", "not the tail");
-            Log.d("tail path: ", node.toString());
-
             for (int i = 0; i < node.getPath().getPoints().size() - 1; i++) {
 
                 Point pCurrent = node.getPath().getPoints().get(i);
                 Point pNext = node.getPath().getPoints().get(i + 1);
 
-                //create new line from two points in the path
                 PointF pointA = new PointF(pCurrent.getX(), pCurrent.getY());
                 PointF pointB = new PointF(pNext.getX(), pNext.getY());
                 Line line = new Line(pointA, pointB);
