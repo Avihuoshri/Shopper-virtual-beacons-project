@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/tv_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        />
+
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="next product"
+        />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="take  product"
+        />
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <EditText
+        android:id="@+id/edit_text_product"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="insert product"/>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="save shopping route"
+        android:onClick="save"/>
+
+    <Button
+        android:id="@+id/button_show_route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_below="@+id/button_save"
+        android:layout_marginTop="17dp"
+        android:text="Show shopping route" />
+
+    <Button
+        android:id="@+id/button_Show_products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_below="@+id/button_save"
+        android:layout_marginTop="17dp"
+        android:text="Show products location" />
+
+    <Button
+        android:id="@+id/btn_drew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_below="@+id/button_save"
+        android:layout_marginTop="17dp"
+        android:text="Show path on map" />
+</LinearLayout>
