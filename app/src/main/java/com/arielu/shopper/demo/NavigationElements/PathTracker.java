@@ -10,9 +10,10 @@ public class PathTracker implements Serializable {
     public CycleLinkedList list;
 
     public PathTracker() {
+        initList();
     }
 
-    public void initList() {
+    private void initList() {
         startPoint = new Point(250, 660);
         firstPath = new Path();
         list = new CycleLinkedList();
@@ -49,7 +50,6 @@ public class PathTracker implements Serializable {
 
     }
 
-    @Override
     public String toString() {
         return "PathTracker{" +
                 " list = " + list.toString() +

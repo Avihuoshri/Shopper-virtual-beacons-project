@@ -35,6 +35,7 @@
     <string name="delete">Delete</string>
     <string name="delete_message">Are you sure want to delete?</string>
     <string name="accept">Accept</string>
+    <string name="show_path_on_map">Show path on map</string>
     <string-array name="spinner_quantity">
         <item>1</item>
         <item>2</item>

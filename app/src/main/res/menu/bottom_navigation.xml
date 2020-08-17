@@ -11,4 +11,9 @@
         android:orderInCategory="100"
         android:icon="@drawable/permission3"
         app:showAsAction="always"/>
+    <item android:id="@+id/btn_drew"
+        android:title="shopping route"
+        android:orderInCategory="100"
+        android:icon="@drawable/drew_path"
+        app:showAsAction="always"/>
 </menu>

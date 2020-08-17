@@ -130,7 +130,7 @@ public class OnShopActivity extends AppCompatActivity implements SensorEventList
         simpleStepDetector.registerListener(this);
 
         tracker = new PathTracker();
-        tracker.initList();
+        //tracker.initList();
 
     }
 

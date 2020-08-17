@@ -1124,6 +1124,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drew_path
 drawable favorite_star
 drawable favorite_star2
 drawable first_activity_background
@@ -1748,6 +1749,7 @@ string project_id
 string register_here
 string sales
 string search_menu_title
+string show_path_on_map
 string status_bar_notification_info_overflow
 string ttl
 style AlertDialog_AppCompat
