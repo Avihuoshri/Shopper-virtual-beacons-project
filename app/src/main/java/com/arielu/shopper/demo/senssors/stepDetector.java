@@ -1,8 +1,11 @@
 package com.arielu.shopper.demo.senssors;
 
+import com.arielu.shopper.demo.Map.DepartmentBlock;
+import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.OnShopActivity;
 import com.arielu.shopper.demo.interfaces.StepListener;
 import java.util.ArrayList;
+import java.util.List;
 
 public class stepDetector {
 
@@ -27,7 +30,7 @@ public class stepDetector {
 
     private ArrayList<Float> degrees = new ArrayList<Float>();
     private float degree;
-
+    private List<DepartmentBlock> departments;
     public void registerListener(OnShopActivity listener) {
         this.listener = listener;
     }
@@ -66,6 +69,7 @@ public class stepDetector {
                 && (timeNs - lastStepTimeNs > STEP_DELAY_NS)) {
             listener.step(timeNs);
             lastStepTimeNs = timeNs;
+
             degrees.add(degree);
         }
         oldVelocityEstimate = velocityEstimate;
@@ -77,5 +81,20 @@ public class stepDetector {
 
     public void setDegree(float value) {
         degree = (float) Math.round(value);
+    }
+
+    public void initDepartments(){
+        departments = new ArrayList<>();
+
+        DepartmentBlock florist = new DepartmentBlock();
+        Point leftDown = new Point(60,590);
+        Point rightUp = new Point(110,570);
+        florist.setLeftDownCorner(leftDown);
+        florist.setRightUpCorner(rightUp);
+        florist.setRightDownleftUpCorners();
+
+        departments.add(florist);
+
+
     }
 }

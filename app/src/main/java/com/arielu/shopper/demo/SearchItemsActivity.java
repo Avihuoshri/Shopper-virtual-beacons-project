@@ -14,6 +14,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.arielu.shopper.demo.NavigationElements.Path;
+import com.arielu.shopper.demo.NavigationElements.PathTracker;
+import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.database.Firebase;
 import com.arielu.shopper.demo.classes.Product;
 import com.arielu.shopper.demo.database.Firebase2;
@@ -34,7 +37,6 @@ public class SearchItemsActivity extends AppCompatActivity implements DialogAddP
 
     // UI elements //
     private ListView lv_products_filtered;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +131,7 @@ public class SearchItemsActivity extends AppCompatActivity implements DialogAddP
         Intent returnIntent = new Intent();
         returnIntent.putExtra("result",sessProd.toBundle()); // using parcelable instead of serializable.
         setResult(Activity.RESULT_OK,returnIntent);
+
         finish(); // reload this activity from scratch if opened again, do not preserve data.
     }
 

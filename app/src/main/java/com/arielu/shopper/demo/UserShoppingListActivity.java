@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -25,7 +23,6 @@ import com.arielu.shopper.demo.NavigationElements.Path;
 import com.arielu.shopper.demo.NavigationElements.PathTracker;
 import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.classes.Branch;
-import com.arielu.shopper.demo.classes.Product;
 import com.arielu.shopper.demo.classes.Shopping_list;
 import com.arielu.shopper.demo.database.Firebase;
 import com.arielu.shopper.demo.database.Firebase2;
@@ -35,7 +32,6 @@ import com.arielu.shopper.demo.pinnedsectionlistview.PinnedSectionAdapter;
 import com.arielu.shopper.demo.pinnedsectionlistview.PinnedSectionListView;
 import com.arielu.shopper.demo.utilities.ImageDownloader;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.Serializable;
@@ -74,7 +70,6 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
     private Branch selectedBranch;
     private PathTracker tracker;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,16 +216,16 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
         });
 
-        tracker = new PathTracker();
+
     }
 
     /** send list and retrive locations from DB, send the result to drewMapActivity
      *  todo - get sort shopping route from db wrapped in tracker object using intent
      */
     private void btn_drawPathClick() {
-        //tracker = new PathTracker();
-        //tracker.initList();
-        //todo - remove
+        tracker = new PathTracker();
+
+        //todo - get  list items position from db and add to tracker
         Path p1 = new Path();
         Point point1 = new Point(400, 1000);
         p1.add(point1);
