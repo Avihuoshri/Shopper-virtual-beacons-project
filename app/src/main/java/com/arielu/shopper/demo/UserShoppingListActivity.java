@@ -227,30 +227,46 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
         //todo - get  list items position from db and add to tracker
         Path p1 = new Path();
-        Point point1 = new Point(400, 1000);
+
+        Point point1 = new Point(380, 100);
         p1.add(point1);
-        Point point2 = new Point(543, 765);
+
+        Point point2 = new Point(700, 85);
         p1.add(point2);
-        Point point3 = new Point(345, 658);
+
+        Point point3 = new Point(430, 230);
         p1.add(point3);
-        Point point4 = new Point(267, 578);
+
+        Point point4 = new Point(430, 260);
         p1.add(point4);
-        Point point5 = new Point(200, 500);
+
+        Point point5 = new Point(610, 170);
         p1.add(point5);
 
-        Path p2 = new Path();
-        p2.add(point5);
-        Point point6 = new Point(110, 710);
-        p2.add(point6);
+        p1.add(point5);
+        Point point6 = new Point(275, 200);
+        p1.add(point6);
 
-        Path p3 = new Path();
-        p3.add(point6);
-        Point point7 = new Point(78, 658);
-        p3.add(point7);
+        p1.add(point6);
+        Point point7 = new Point(330, 270);
+        p1.add(point7);
+
+        Point point8 = new Point(305, 200);
+        p1.add(point8);
+
+        Point point9 = new Point(460, 370);
+        p1.add(point9);
+
+        Point point10 = new Point(460, 400);
+        p1.add(point10);
+
+        Point point11 = new Point(460, 400);
+        p1.add(point11);
+
+        Point point12 = new Point(460, 480);
+        p1.add(point12);
 
         tracker.list.add(p1);
-        tracker.list.add(p2);
-        tracker.list.add(p3);
 
         Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
         intent.putExtra("tracker", tracker);
