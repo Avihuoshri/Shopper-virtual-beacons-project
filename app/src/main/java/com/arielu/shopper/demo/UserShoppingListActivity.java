@@ -228,44 +228,57 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
         //todo - get  list items position from db and add to tracker
         Path p1 = new Path();
 
-        Point point1 = new Point(380, 100);
+        //Shohko
+        Point point1 = new Point(700, 85);
         p1.add(point1);
 
-        Point point2 = new Point(700, 85);
+        //milk
+        Point point2 = new Point(640, 180);
         p1.add(point2);
 
-        Point point3 = new Point(430, 230);
+        //bamba nougat
+        Point point3 = new Point(585, 420);
         p1.add(point3);
 
-        Point point4 = new Point(430, 260);
+        //bamba
+        Point point4 = new Point(585, 500);
         p1.add(point4);
 
-        Point point5 = new Point(610, 170);
+        //kola
+        Point point5 = new Point(900, 150);
         p1.add(point5);
 
-        p1.add(point5);
-        Point point6 = new Point(275, 200);
+       // ritzspaz
+        Point point6 = new Point(460, 400);
         p1.add(point6);
 
-        p1.add(point6);
-        Point point7 = new Point(330, 270);
+        //palmoliv
+        Point point7 = new Point(460, 480);
         p1.add(point7);
 
-        Point point8 = new Point(305, 200);
+        //sano
+        Point point8 = new Point(430, 550);
         p1.add(point8);
 
-        Point point9 = new Point(460, 370);
+        //malawach
+        Point point9 = new Point(700, 950);
         p1.add(point9);
 
-        Point point10 = new Point(460, 400);
+        //jachnun
+        Point point10 = new Point(700, 1100);
         p1.add(point10);
 
-        Point point11 = new Point(460, 400);
+        //burekas
+        Point point11 = new Point(700, 1200);
         p1.add(point11);
 
-        Point point12 = new Point(460, 480);
+        //cashier
+        Point point12 = new Point(765, 1450);
         p1.add(point12);
 
+        //Enter
+        Point point13 = new Point(455, 1650);
+        p1.add(point13);
         tracker.list.add(p1);
 
         Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
