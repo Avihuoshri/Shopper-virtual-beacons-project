@@ -17,10 +17,12 @@ public class Product implements Serializable
     protected String productManufacturer ;
     protected Bitmap productImage;
 
+    protected String productLocation ;
+
     // firebase needs empty constructor
     public Product() { }
 
-    public Product(String productCode , String categoryName , String productName, Double productPrice, String productImageUrl, String productManufacturer )
+    public Product(String productCode, String categoryName, String productName, Double productPrice, String productImageUrl, String productManufacturer, String productLocation)
     {
         setProductCode(productCode);
         setCategoryName(categoryName);
@@ -28,6 +30,7 @@ public class Product implements Serializable
         setProductPrice(productPrice);
         setProductImageUrl(productImageUrl);
         setProductManufacturer(productManufacturer);
+        setProductLocation(productLocation);
     }
 
     public Product(Product other)
@@ -54,6 +57,7 @@ public class Product implements Serializable
         b.putString("productImageUrl",getProductImageUrl());
         b.putString("productManufacturer",getProductManufacturer());
         b.putParcelable("productImage",ProductImage());
+        b.putString("productLocation",getProductLocation());
 
         return b;
     }
@@ -66,7 +70,8 @@ public class Product implements Serializable
                 b.getString("productName"),
                 b.getDouble("productPrice"),
                 b.getString("productImageUrl"),
-                b.getString("productManufacturer")
+                b.getString("productManufacturer"),
+                b.getString("productLocation")
         );
         p.setProductImage(b.getParcelable("productImage"));
 
@@ -113,6 +118,13 @@ public class Product implements Serializable
 
     public void setProductImage(Bitmap ProductImage) { this.productImage = ProductImage; }
 
+    public String getProductLocation() {
+        return productLocation;
+    }
+
+    public void setProductLocation(String productLocation) {
+        this.productLocation = productLocation;
+    }
     @Override
     public boolean equals(@Nullable Object obj) {
         Product other = (Product) obj;

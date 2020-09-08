@@ -20,9 +20,9 @@ public class SessionProduct extends Product {
     // Empty Constructor for firebase
     private SessionProduct() {}
 
-    public SessionProduct(String productCode , String categoryName , String productName, Double productPrice, String productImageUrl, String productManufacturer)
+    public SessionProduct(String productCode , String categoryName , String productName, Double productPrice, String productImageUrl, String productManufacturer, String productLocation)
     {
-        super(productCode,categoryName,productName,productPrice,productImageUrl,productManufacturer);
+        super(productCode,categoryName,productName,productPrice,productImageUrl,productManufacturer,productLocation);
     }
 
     // Copy Constructor
