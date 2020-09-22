@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -209,6 +210,8 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
                 temp.add(p);
                 list.put(p.getCategoryName(), temp);
+
+               // Log.d("product location", p.getProductLocation());
             }
             progressBar.setVisibility(View.GONE);
             pinnedSectionAdapter.notifyDataSetChanged();
@@ -224,61 +227,26 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
      */
     private void btn_drawPathClick() {
         tracker = new PathTracker();
+        //todo - get list items position from db and add to tracker
+        int listSize = list.size();
+        int counter = 0;
+        for(Map.Entry<String,ArrayList<SessionProduct>> entry : list.entrySet()) {
+            ArrayList<SessionProduct> temp = entry.getValue();
 
-        //todo - get  list items position from db and add to tracker
+            String firstProductLocation = temp.get(0).getProductLocation();
+            for(int i = 0; i < (temp.size() - 1); i++){
+                firstProductLocation = temp.get(i).getProductLocation();
+                String seconedProductLocation = temp.get(i+1).getProductLocation();
+                Point p1 = new Point(firstProductLocation);
+                Point p2 = new Point(seconedProductLocation);
+                Path path = new Path();
+                path.add(p1);
+                path.add(p2);
+                tracker.list.add(path);
+            }
+            counter++;
+        }
         Path p1 = new Path();
-
-        //Shohko
-        Point point1 = new Point(700, 85);
-        p1.add(point1);
-
-        //milk
-        Point point2 = new Point(640, 180);
-        p1.add(point2);
-
-        //bamba nougat
-        Point point3 = new Point(585, 420);
-        p1.add(point3);
-
-        //bamba
-        Point point4 = new Point(585, 500);
-        p1.add(point4);
-
-        //kola
-        Point point5 = new Point(900, 150);
-        p1.add(point5);
-
-       // ritzspaz
-        Point point6 = new Point(460, 400);
-        p1.add(point6);
-
-        //palmoliv
-        Point point7 = new Point(460, 480);
-        p1.add(point7);
-
-        //sano
-        Point point8 = new Point(430, 550);
-        p1.add(point8);
-
-        //malawach
-        Point point9 = new Point(700, 950);
-        p1.add(point9);
-
-        //jachnun
-        Point point10 = new Point(700, 1100);
-        p1.add(point10);
-
-        //burekas
-        Point point11 = new Point(700, 1200);
-        p1.add(point11);
-
-        //cashier
-        Point point12 = new Point(765, 1450);
-        p1.add(point12);
-
-        //Enter
-        Point point13 = new Point(455, 1650);
-        p1.add(point13);
         tracker.list.add(p1);
 
         Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);

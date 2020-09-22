@@ -41,6 +41,7 @@ public class Product implements Serializable
         setProductPrice(other.getProductPrice());
         setProductImageUrl(other.getProductImageUrl());
         setProductManufacturer(other.getProductManufacturer());
+        setProductLocation(other.getProductLocation());
 
         if(other.ProductImage()!=null)
             productImage = Bitmap.createBitmap(other.ProductImage());
@@ -104,7 +105,7 @@ public class Product implements Serializable
 
     public Double getProductPrice() { return productPrice; }
 
-    public void setProductPrice(Double productPrice) {  this.productPrice = productPrice; }
+    public void setProductPrice(Double productPrice) { this.productPrice = productPrice; }
 
     public String getProductImageUrl() { return productImageUrl; }
 

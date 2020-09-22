@@ -74,7 +74,6 @@ public class SearchItemsActivity extends AppCompatActivity implements DialogAddP
             if(sv_search.getQuery().length() > 0)
                 sv_search.setQuery(currSearchQuery,true);
         });
-
     }
 
     protected void LinkUI()

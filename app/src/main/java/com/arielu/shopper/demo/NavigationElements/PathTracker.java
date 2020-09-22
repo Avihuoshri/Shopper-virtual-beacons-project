@@ -14,7 +14,7 @@ public class PathTracker implements Serializable {
     }
 
     private void initList() {
-        startPoint = new Point(250, 660);
+        startPoint = new Point(455, 1650);
         firstPath = new Path();
         list = new CycleLinkedList();
 
