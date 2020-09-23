@@ -132,7 +132,7 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
                         return true;
                     case R.id.user_permission:
                         btn_permissionsClick();
-                       return true;
+                        return true;
                     case R.id.btn_drew:
                         btn_drawPathClick();
                         return true;
@@ -211,7 +211,7 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
                 temp.add(p);
                 list.put(p.getCategoryName(), temp);
 
-               // Log.d("product location", p.getProductLocation());
+                // Log.d("product location", p.getProductLocation());
             }
             progressBar.setVisibility(View.GONE);
             pinnedSectionAdapter.notifyDataSetChanged();
@@ -222,37 +222,45 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
     }
 
-    /** send list and retrive locations from DB, send the result to drewMapActivity
-     *  todo - get sort shopping route from db wrapped in tracker object using intent
-     */
     private void btn_drawPathClick() {
         tracker = new PathTracker();
-        //todo - get list items position from db and add to tracker
+        //todo - sort list for fastest shouping route (by departments)
         int listSize = list.size();
         int counter = 0;
-        for(Map.Entry<String,ArrayList<SessionProduct>> entry : list.entrySet()) {
+        for (Map.Entry<String, ArrayList<SessionProduct>> entry : list.entrySet()) {
             ArrayList<SessionProduct> temp = entry.getValue();
 
-            String firstProductLocation = temp.get(0).getProductLocation();
-            for(int i = 0; i < (temp.size() - 1); i++){
-                firstProductLocation = temp.get(i).getProductLocation();
-                String seconedProductLocation = temp.get(i+1).getProductLocation();
-                Point p1 = new Point(firstProductLocation);
-                Point p2 = new Point(seconedProductLocation);
-                Path path = new Path();
-                path.add(p1);
-                path.add(p2);
-                tracker.list.add(path);
-            }
-            counter++;
-        }
-        Path p1 = new Path();
-        tracker.list.add(p1);
+            for (int i = 0; i < (temp.size()); i++) {
+                String firstProductLocation;
 
-        Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
-        intent.putExtra("tracker", tracker);
-        startActivity(intent);
-    }
+                //first product on list
+                if (counter == 0) {
+                    firstProductLocation = temp.get(counter).getProductLocation();
+                    Point p1 = new Point(firstProductLocation);
+                    tracker.firstPath.add(p1);
+                }
+
+                //rest of the list
+                else {
+                    firstProductLocation = temp.get(i).getProductLocation();
+                    Point p1 = new Point(firstProductLocation);
+                    Path path = new Path();
+                    path.add(p1);
+                    if(i<(temp.size() -1 )) {
+                        String seconedProductLocation = temp.get(i + 1).getProductLocation();
+                        Point p2 = new Point(seconedProductLocation);
+                        path.add(p2);
+                    }
+                    tracker.list.add(path);
+                }
+                counter++;
+            }
+        }
+    Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
+        intent.putExtra("tracker",tracker);
+
+    startActivity(intent);
+}
 //new
 
     @Override
