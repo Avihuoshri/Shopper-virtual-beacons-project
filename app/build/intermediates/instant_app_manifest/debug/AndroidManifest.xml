@@ -68,6 +68,7 @@
         <activity android:name="com.arielu.shopper.demo.MessageBoardActivity" />
         <activity android:name="com.arielu.shopper.demo.LoginActivity" />
         <activity android:name="com.arielu.shopper.demo.RegisterActivity" />
+        <activity android:name="com.arielu.shopper.demo.DrawMapActivity" />
         <activity android:name="com.arielu.shopper.demo.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
