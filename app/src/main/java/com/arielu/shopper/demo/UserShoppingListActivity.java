@@ -226,41 +226,23 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
         tracker = new PathTracker();
         //todo - sort list for fastest shouping route (by departments)
         int listSize = list.size();
-        int counter = 0;
+        boolean firstProduct = true;
+        Point lastProductPoint = null;
         for (Map.Entry<String, ArrayList<SessionProduct>> entry : list.entrySet()) {
-            ArrayList<SessionProduct> temp = entry.getValue();
-
-            for (int i = 0; i < (temp.size()); i++) {
-                String firstProductLocation;
-
-                //first product on list
-                if (counter == 0) {
-                    firstProductLocation = temp.get(counter).getProductLocation();
-                    Point p1 = new Point(firstProductLocation);
-                    tracker.firstPath.add(p1);
-                }
-
-                //rest of the list
-                else {
-                    firstProductLocation = temp.get(i).getProductLocation();
-                    Point p1 = new Point(firstProductLocation);
-                    Path path = new Path();
-                    path.add(p1);
-                    if(i<(temp.size() -1 )) {
-                        String seconedProductLocation = temp.get(i + 1).getProductLocation();
-                        Point p2 = new Point(seconedProductLocation);
-                        path.add(p2);
-                    }
-                    tracker.list.add(path);
-                }
-                counter++;
+            ArrayList<SessionProduct> subList = entry.getValue();
+            Path path = new Path();
+            for(SessionProduct product: subList) {
+                Point p = new Point(product.getProductLocation());
+                path.add(p);
             }
+            tracker.list.add(path);
         }
-    Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
-        intent.putExtra("tracker",tracker);
 
-    startActivity(intent);
-}
+        Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
+        intent.putExtra("tracker", tracker);
+
+        startActivity(intent);
+    }
 //new
 
     @Override
