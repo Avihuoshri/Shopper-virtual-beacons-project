@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d39dcdec-491c-4613-8912-e0bfa20eb441" name="Default Changelist" comment="products locations by example list (hard coded)">
+      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/DrawMapActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/NavigationElements/PathTracker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/NavigationElements/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/SearchItemsActivity$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/SearchItemsActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/UserShoppingListActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/classes/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/database/Firebase$10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/database/Firebase$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/database/Firebase$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/database/Firebase$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/database/Firebase$9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/database/Firebase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/models/SessionProduct.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/models/StoreProductRef.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/arielu/shopper/demo/senssors/stepDetector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/DrawMapActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/NavigationElements/PathTracker.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/NavigationElements/Point.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/SearchItemsActivity$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/SearchItemsActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$3.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$4.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$5.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$6.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$7.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity$8.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/UserShoppingListActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/classes/Product.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/database/Firebase$10.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/database/Firebase$6.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/database/Firebase$7.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/database/Firebase$8.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/database/Firebase$9.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/database/Firebase.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/models/SessionProduct.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/models/StoreProductRef.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/com/arielu/shopper/demo/senssors/stepDetector.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo/DrawMapActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo/Map/DepartmentBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo/senssors/stepDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo/UserShoppingListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo/UserShoppingListActivity.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="shopperV1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1g8AOabSs9Sc8mPFKX2yt7hU9V7" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1601181187827" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.arielu.shopper.demo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.arielu.shopper.demo.NavigationElements" />
+      <recent name="com.arielu.shopper.demo.interfaces" />
+      <recent name="com.arielu.shopper.demo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.MainActivity">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.arielu.shopper.demo.MainActivity" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d39dcdec-491c-4613-8912-e0bfa20eb441" name="Default Changelist" comment="" />
+      <created>1597485814239</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597485814239</updated>
+    </task>
+    <task id="LOCAL-00001" summary="start merge code from shopperV1">
+      <created>1597493952233</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597493952233</updated>
+    </task>
+    <task id="LOCAL-00002" summary="remove code and comments">
+      <created>1597494573819</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597494573819</updated>
+    </task>
+    <task id="LOCAL-00003" summary="more classes">
+      <created>1597497045191</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597497045191</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add view list on shop map">
+      <created>1597690840443</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597690840444</updated>
+    </task>
+    <task id="LOCAL-00005" summary="integrate show path on map activity and start building departments blocks">
+      <created>1597814941717</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597814941717</updated>
+    </task>
+    <task id="LOCAL-00006" summary="products locations">
+      <created>1598599848909</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598599848909</updated>
+    </task>
+    <task id="LOCAL-00007" summary="products locations by example list (hard coded)">
+      <created>1599452977213</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1599452977213</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add location to product classes - not finished">
+      <created>1599542141048</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1599542141048</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix retrieve product location from DB and start draw points on map - not finished">
+      <created>1600795468821</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600795468821</updated>
+    </task>
+    <task id="LOCAL-00010" summary="finished get products location from DB - need to fix draw map">
+      <created>1600840915040</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600840915040</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start merge code from shopperV1" />
+    <MESSAGE value="remove code and comments" />
+    <MESSAGE value="more classes" />
+    <MESSAGE value="add view list on shop map" />
+    <MESSAGE value="integrate show path on map activity and start building departments blocks" />
+    <MESSAGE value="products locations" />
+    <MESSAGE value="products locations by example list (hard coded)" />
+    <MESSAGE value="add location to product classes - not finished" />
+    <MESSAGE value="fix retrieve product location from DB and start draw points on map - not finished" />
+    <MESSAGE value="finished get products location from DB - need to fix draw map" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished get products location from DB - need to fix draw map" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="653" y="175" key="#MainActivity" timestamp="1597487774521">
+      <screen x="0" y="23" width="1920" height="1002" />
+    </state>
+    <state x="653" y="175" key="#MainActivity/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597487774521" />
+    <state x="424" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597487749159">
+      <screen x="0" y="23" width="1920" height="1002" />
+    </state>
+    <state x="424" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597487749159" />
+    <state x="711" y="180" key="#com.intellij.ide.util.MemberChooser" timestamp="1600100960261">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="711" y="180" key="#com.intellij.ide.util.MemberChooser/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600100960261" />
+    <state x="711" y="180" key="#com.intellij.ide.util.MemberChooser/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1599540117781" />
+    <state x="2453" y="169" key="#com.intellij.ide.util.MemberChooser/1920.23.1440.877/0.23.1920.1000@1920.23.1440.877" timestamp="1597813377547" />
+    <state x="2403" y="316" width="473" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597493121370">
+      <screen x="1920" y="0" width="1440" height="900" />
+    </state>
+    <state x="2403" y="316" width="473" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493121370" />
+    <state x="2277" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597813426735">
+      <screen x="1920" y="23" width="1440" height="877" />
+    </state>
+    <state x="2277" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1440.877/0.23.1920.1000@1920.23.1440.877" timestamp="1597813426735" />
+    <state x="2378" y="222" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597813270133">
+      <screen x="1920" y="23" width="1440" height="877" />
+    </state>
+    <state x="2378" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597492339529" />
+    <state x="2378" y="222" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.23.1440.877/0.23.1920.1000@1920.23.1440.877" timestamp="1597813270133" />
+    <state x="723" y="228" width="751" height="579" key="#xdebugger.evaluate" timestamp="1599541930470">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="723" y="228" key="#xdebugger.evaluate/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1599541930470" />
+    <state x="723" y="234" key="#xdebugger.evaluate/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597511226964" />
+    <state x="723" y="234" width="751" height="579" key="#xdebugger.evaluate/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1597725360475" />
+    <state x="815" y="378" key="AndroidCreateXmlResourceDialog" timestamp="1597553133300">
+      <screen x="0" y="23" width="1920" height="1002" />
+    </state>
+    <state x="815" y="378" key="AndroidCreateXmlResourceDialog/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597553133300" />
+    <state x="452" y="79" width="1140" height="795" key="CommitChangelistDialog2" timestamp="1601181344074">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="452" y="62" width="1140" height="795" key="CommitChangelistDialog2/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1599542139089" />
+    <state x="2259" y="52" key="CommitChangelistDialog2/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493949701" />
+    <state x="452" y="84" width="1412" height="795" key="CommitChangelistDialog2/1920.23.1440.828/0.23.1920.1057@0.23.1920.1057" timestamp="1597690835686" />
+    <state x="37" y="81" key="CommitChangelistDialog2/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1599452976662" />
+    <state x="2259" y="74" key="CommitChangelistDialog2/1920.23.1440.877/0.23.1920.1000@1920.23.1440.877" timestamp="1597814940930" />
+    <state x="452" y="79" key="CommitChangelistDialog2/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181344074" />
+    <state x="100" y="113" width="1720" height="788" key="DiffContextDialog" timestamp="1600937890959">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="100" y="100" width="1720" height="880" key="DiffContextDialog/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1599541092484" />
+    <state x="100" y="113" width="1720" height="788" key="DiffContextDialog/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1600937890959" />
+    <state width="1751" height="248" key="GridCell.Tab.0.bottom" timestamp="1601181175569">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.0.bottom/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951906669" />
+    <state width="1398" height="271" key="GridCell.Tab.0.bottom/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493738095" />
+    <state width="1878" height="335" key="GridCell.Tab.0.bottom/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597557025932" />
+    <state width="1751" height="191" key="GridCell.Tab.0.bottom/1920.23.1440.787/0.23.1920.1057@0.23.1920.1057" timestamp="1601178555578" />
+    <state width="1751" height="191" key="GridCell.Tab.0.bottom/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178576484" />
+    <state width="1384" height="149" key="GridCell.Tab.0.bottom/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790598057" />
+    <state width="1384" height="189" key="GridCell.Tab.0.bottom/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879436" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600102096512" />
+    <state width="1878" height="230" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1599542170661" />
+    <state width="1878" height="335" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836718" />
+    <state width="1751" height="248" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175569" />
+    <state width="1384" height="414" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789182578" />
+    <state width="1439" height="378" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708094646" />
+    <state width="1878" height="303" key="GridCell.Tab.0.bottom/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990979" />
+    <state width="1751" height="248" key="GridCell.Tab.0.center" timestamp="1601181175568">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.0.center/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951906666" />
+    <state width="1398" height="271" key="GridCell.Tab.0.center/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493738093" />
+    <state width="1878" height="335" key="GridCell.Tab.0.center/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597557025930" />
+    <state width="1751" height="191" key="GridCell.Tab.0.center/1920.23.1440.787/0.23.1920.1057@0.23.1920.1057" timestamp="1601178555577" />
+    <state width="1751" height="191" key="GridCell.Tab.0.center/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178576483" />
+    <state width="1384" height="149" key="GridCell.Tab.0.center/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790598057" />
+    <state width="1384" height="189" key="GridCell.Tab.0.center/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879435" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600102096511" />
+    <state width="1878" height="230" key="GridCell.Tab.0.center/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1599542170660" />
+    <state width="1878" height="335" key="GridCell.Tab.0.center/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836717" />
+    <state width="1751" height="248" key="GridCell.Tab.0.center/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175568" />
+    <state width="1384" height="414" key="GridCell.Tab.0.center/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789182577" />
+    <state width="1439" height="378" key="GridCell.Tab.0.center/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708094645" />
+    <state width="1878" height="303" key="GridCell.Tab.0.center/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990979" />
+    <state width="1751" height="248" key="GridCell.Tab.0.left" timestamp="1601181175568">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.0.left/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951906664" />
+    <state width="1398" height="271" key="GridCell.Tab.0.left/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493738092" />
+    <state width="1878" height="335" key="GridCell.Tab.0.left/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597557025929" />
+    <state width="1751" height="191" key="GridCell.Tab.0.left/1920.23.1440.787/0.23.1920.1057@0.23.1920.1057" timestamp="1601178555577" />
+    <state width="1751" height="191" key="GridCell.Tab.0.left/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178576483" />
+    <state width="1384" height="149" key="GridCell.Tab.0.left/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790598056" />
+    <state width="1384" height="189" key="GridCell.Tab.0.left/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879435" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600102096510" />
+    <state width="1878" height="230" key="GridCell.Tab.0.left/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1599542170659" />
+    <state width="1878" height="335" key="GridCell.Tab.0.left/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836717" />
+    <state width="1751" height="248" key="GridCell.Tab.0.left/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175568" />
+    <state width="1384" height="414" key="GridCell.Tab.0.left/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789182577" />
+    <state width="1439" height="378" key="GridCell.Tab.0.left/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708094643" />
+    <state width="1878" height="303" key="GridCell.Tab.0.left/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990979" />
+    <state width="1751" height="248" key="GridCell.Tab.0.right" timestamp="1601181175569">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.0.right/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951906668" />
+    <state width="1398" height="271" key="GridCell.Tab.0.right/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493738094" />
+    <state width="1878" height="335" key="GridCell.Tab.0.right/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597557025931" />
+    <state width="1751" height="191" key="GridCell.Tab.0.right/1920.23.1440.787/0.23.1920.1057@0.23.1920.1057" timestamp="1601178555578" />
+    <state width="1751" height="191" key="GridCell.Tab.0.right/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178576484" />
+    <state width="1384" height="149" key="GridCell.Tab.0.right/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790598057" />
+    <state width="1384" height="189" key="GridCell.Tab.0.right/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879436" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600102096512" />
+    <state width="1878" height="230" key="GridCell.Tab.0.right/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1599542170660" />
+    <state width="1878" height="335" key="GridCell.Tab.0.right/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836718" />
+    <state width="1751" height="248" key="GridCell.Tab.0.right/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175569" />
+    <state width="1384" height="414" key="GridCell.Tab.0.right/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789182578" />
+    <state width="1439" height="378" key="GridCell.Tab.0.right/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708094646" />
+    <state width="1878" height="303" key="GridCell.Tab.0.right/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990979" />
+    <state width="1751" height="248" key="GridCell.Tab.1.bottom" timestamp="1601181175571">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.1.bottom/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951880677" />
+    <state width="1878" height="335" key="GridCell.Tab.1.bottom/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597556972968" />
+    <state width="1751" height="248" key="GridCell.Tab.1.bottom/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178515726" />
+    <state width="1384" height="149" key="GridCell.Tab.1.bottom/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790617508" />
+    <state width="1384" height="189" key="GridCell.Tab.1.bottom/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879437" />
+    <state width="1384" height="414" key="GridCell.Tab.1.bottom/1920.23.1440.811/0.23.1920.1057@0.23.1920.1057" timestamp="1600789250067" />
+    <state width="1878" height="214" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.0.1920.1023@0.0.1920.1023" timestamp="1599541829519" />
+    <state width="1878" height="248" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600952088027" />
+    <state width="1878" height="305" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.0.1920.990@0.0.1920.990" timestamp="1600101931426" />
+    <state width="1878" height="100" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1597809103155" />
+    <state width="1878" height="335" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836720" />
+    <state width="1751" height="248" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175571" />
+    <state width="1384" height="414" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789174645" />
+    <state width="1439" height="378" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708093210" />
+    <state width="1878" height="303" key="GridCell.Tab.1.bottom/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990980" />
+    <state width="1751" height="248" key="GridCell.Tab.1.center" timestamp="1601181175570">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.1.center/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951880676" />
+    <state width="1878" height="335" key="GridCell.Tab.1.center/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597556972966" />
+    <state width="1751" height="248" key="GridCell.Tab.1.center/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178515725" />
+    <state width="1384" height="149" key="GridCell.Tab.1.center/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790617506" />
+    <state width="1384" height="189" key="GridCell.Tab.1.center/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879437" />
+    <state width="1384" height="414" key="GridCell.Tab.1.center/1920.23.1440.811/0.23.1920.1057@0.23.1920.1057" timestamp="1600789250066" />
+    <state width="1878" height="214" key="GridCell.Tab.1.center/1920.23.1440.877/0.0.1920.1023@0.0.1920.1023" timestamp="1599541829517" />
+    <state width="1878" height="248" key="GridCell.Tab.1.center/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600952088026" />
+    <state width="1878" height="305" key="GridCell.Tab.1.center/1920.23.1440.877/0.0.1920.990@0.0.1920.990" timestamp="1600101931424" />
+    <state width="1878" height="100" key="GridCell.Tab.1.center/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1597809103155" />
+    <state width="1878" height="335" key="GridCell.Tab.1.center/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836719" />
+    <state width="1751" height="248" key="GridCell.Tab.1.center/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175570" />
+    <state width="1384" height="414" key="GridCell.Tab.1.center/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789174645" />
+    <state width="1439" height="378" key="GridCell.Tab.1.center/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708093209" />
+    <state width="1878" height="303" key="GridCell.Tab.1.center/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990980" />
+    <state width="1751" height="248" key="GridCell.Tab.1.left" timestamp="1601181175570">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.1.left/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951880676" />
+    <state width="1878" height="335" key="GridCell.Tab.1.left/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597556972965" />
+    <state width="1751" height="248" key="GridCell.Tab.1.left/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178515724" />
+    <state width="1384" height="149" key="GridCell.Tab.1.left/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790617506" />
+    <state width="1384" height="189" key="GridCell.Tab.1.left/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879436" />
+    <state width="1384" height="414" key="GridCell.Tab.1.left/1920.23.1440.811/0.23.1920.1057@0.23.1920.1057" timestamp="1600789250066" />
+    <state width="1878" height="214" key="GridCell.Tab.1.left/1920.23.1440.877/0.0.1920.1023@0.0.1920.1023" timestamp="1599541829517" />
+    <state width="1878" height="248" key="GridCell.Tab.1.left/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600952088025" />
+    <state width="1878" height="305" key="GridCell.Tab.1.left/1920.23.1440.877/0.0.1920.990@0.0.1920.990" timestamp="1600101931423" />
+    <state width="1878" height="100" key="GridCell.Tab.1.left/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1597809103154" />
+    <state width="1878" height="335" key="GridCell.Tab.1.left/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836719" />
+    <state width="1751" height="248" key="GridCell.Tab.1.left/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175570" />
+    <state width="1384" height="414" key="GridCell.Tab.1.left/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789174644" />
+    <state width="1439" height="378" key="GridCell.Tab.1.left/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708093208" />
+    <state width="1878" height="303" key="GridCell.Tab.1.left/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990980" />
+    <state width="1751" height="248" key="GridCell.Tab.1.right" timestamp="1601181175570">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1878" height="148" key="GridCell.Tab.1.right/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600951880677" />
+    <state width="1878" height="335" key="GridCell.Tab.1.right/1920.0.1440.900/0.23.1920.1002@0.23.1920.1002" timestamp="1597556972967" />
+    <state width="1751" height="248" key="GridCell.Tab.1.right/1920.23.1440.788/0.23.1920.1057@0.23.1920.1057" timestamp="1601178515725" />
+    <state width="1384" height="149" key="GridCell.Tab.1.right/1920.23.1440.804/0.23.1920.1057@0.23.1920.1057" timestamp="1600790617507" />
+    <state width="1384" height="189" key="GridCell.Tab.1.right/1920.23.1440.808/0.23.1920.1057@0.23.1920.1057" timestamp="1600789879437" />
+    <state width="1384" height="414" key="GridCell.Tab.1.right/1920.23.1440.811/0.23.1920.1057@0.23.1920.1057" timestamp="1600789250066" />
+    <state width="1878" height="214" key="GridCell.Tab.1.right/1920.23.1440.877/0.0.1920.1023@0.0.1920.1023" timestamp="1599541829518" />
+    <state width="1878" height="248" key="GridCell.Tab.1.right/1920.23.1440.877/0.0.1920.1080@0.0.1920.1080" timestamp="1600952088027" />
+    <state width="1878" height="305" key="GridCell.Tab.1.right/1920.23.1440.877/0.0.1920.990@0.0.1920.990" timestamp="1600101931425" />
+    <state width="1878" height="100" key="GridCell.Tab.1.right/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1597809103155" />
+    <state width="1878" height="335" key="GridCell.Tab.1.right/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597552836720" />
+    <state width="1751" height="248" key="GridCell.Tab.1.right/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181175570" />
+    <state width="1384" height="414" key="GridCell.Tab.1.right/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600789174645" />
+    <state width="1439" height="378" key="GridCell.Tab.1.right/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708093210" />
+    <state width="1878" height="303" key="GridCell.Tab.1.right/1920.23.1440.877/0.23.1920.997@0.23.1920.997" timestamp="1597768990980" />
+    <state x="547" y="268" key="IDE.errors.dialog" timestamp="1601181159778">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="547" y="274" key="IDE.errors.dialog/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1597555205939" />
+    <state x="547" y="268" key="IDE.errors.dialog/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181159778" />
+    <state x="610" y="236" key="MultipleFileMergeDialog" timestamp="1601181131617">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="610" y="236" key="MultipleFileMergeDialog/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181131617" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1597553498849">
+      <screen x="0" y="23" width="1920" height="1002" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597553498849" />
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1600942377808">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600942377808" />
+    <state x="2240" y="190" key="Vcs.Push.Dialog.v2/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493979264" />
+    <state x="427" y="246" key="Vcs.Push.Dialog.v2/1920.23.1440.828/0.23.1920.1057@0.23.1920.1057" timestamp="1597690841073" />
+    <state x="427" y="234" key="Vcs.Push.Dialog.v2/1920.23.1440.877/0.23.1920.1000@0.23.1920.1000" timestamp="1599452982455" />
+    <state x="2240" y="208" key="Vcs.Push.Dialog.v2/1920.23.1440.877/0.23.1920.1000@1920.23.1440.877" timestamp="1597814950361" />
+    <state x="427" y="227" key="Vcs.Push.Dialog.v2/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1600840923225" />
+    <state x="2418" y="190" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1597493892610">
+      <screen x="1920" y="0" width="1440" height="900" />
+    </state>
+    <state x="2418" y="190" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.0.1440.900/0.0.1920.1080@1920.0.1440.900" timestamp="1597493892610" />
+    <state x="203" y="255" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601177618603">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="203" y="255" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601177618603" />
+    <state x="203" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.23.1440.877/0.23.1920.973@0.23.1920.973" timestamp="1600787925777" />
+    <state x="203" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.23.1440.877/0.23.1920.975@0.23.1920.975" timestamp="1600708034830" />
+    <state x="612" y="146" width="695" height="787" key="find.popup" timestamp="1600100797473">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="612" y="146" width="695" height="787" key="find.popup/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600100797473" />
+    <state x="612" y="166" width="695" height="770" key="find.popup/1920.23.1440.828/0.23.1920.1057@0.23.1920.1057" timestamp="1597691101110" />
+    <state x="612" y="159" width="695" height="729" key="find.popup/1920.23.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1597553428933" />
+    <state x="614" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1601181319213">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="614" y="233" key="git4idea.branch.GitSmartOperationDialog/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181319213" />
+    <state x="586" y="287" key="git4idea.merge.GitPullDialog" timestamp="1601181203351">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="586" y="312" key="git4idea.merge.GitPullDialog/1920.23.1440.787/0.23.1920.1057@0.23.1920.1057" timestamp="1601178760340" />
+    <state x="586" y="287" key="git4idea.merge.GitPullDialog/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181203351" />
+    <state x="645" y="421" key="git4idea.ui.GitStashDialog" timestamp="1601181261443">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="645" y="421" key="git4idea.ui.GitStashDialog/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1601181261443" />
+    <state x="507" y="221" width="670" height="755" key="search.everywhere.popup" timestamp="1600942286340">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="507" y="221" width="670" height="755" key="search.everywhere.popup/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1600942286340" />
+    <state x="507" y="221" width="670" height="676" key="search.everywhere.popup/1920.23.1440.877/0.23.1920.967@0.23.1920.967" timestamp="1600937858322" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/arielu/shopper/demo/DrawMapActivity.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
