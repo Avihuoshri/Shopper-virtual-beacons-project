@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -131,7 +132,7 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
                         return true;
                     case R.id.user_permission:
                         btn_permissionsClick();
-                       return true;
+                        return true;
                     case R.id.btn_drew:
                         btn_drawPathClick();
                         return true;
@@ -209,6 +210,8 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
                 temp.add(p);
                 list.put(p.getCategoryName(), temp);
+
+                // Log.d("product location", p.getProductLocation());
             }
             progressBar.setVisibility(View.GONE);
             pinnedSectionAdapter.notifyDataSetChanged();
@@ -219,41 +222,25 @@ public class UserShoppingListActivity extends AppCompatActivity implements Dialo
 
     }
 
-    /** send list and retrive locations from DB, send the result to drewMapActivity
-     *  todo - get sort shopping route from db wrapped in tracker object using intent
-     */
     private void btn_drawPathClick() {
         tracker = new PathTracker();
-
-        //todo - get  list items position from db and add to tracker
-        Path p1 = new Path();
-        Point point1 = new Point(400, 1000);
-        p1.add(point1);
-        Point point2 = new Point(543, 765);
-        p1.add(point2);
-        Point point3 = new Point(345, 658);
-        p1.add(point3);
-        Point point4 = new Point(267, 578);
-        p1.add(point4);
-        Point point5 = new Point(200, 500);
-        p1.add(point5);
-
-        Path p2 = new Path();
-        p2.add(point5);
-        Point point6 = new Point(110, 710);
-        p2.add(point6);
-
-        Path p3 = new Path();
-        p3.add(point6);
-        Point point7 = new Point(78, 658);
-        p3.add(point7);
-
-        tracker.list.add(p1);
-        tracker.list.add(p2);
-        tracker.list.add(p3);
+        //todo - sort list for fastest shouping route (by departments)
+        int listSize = list.size();
+        boolean firstProduct = true;
+        Point lastProductPoint = null;
+        for (Map.Entry<String, ArrayList<SessionProduct>> entry : list.entrySet()) {
+            ArrayList<SessionProduct> subList = entry.getValue();
+            Path path = new Path();
+            for(SessionProduct product: subList) {
+                Point p = new Point(product.getProductLocation());
+                path.add(p);
+            }
+            tracker.list.add(path);
+        }
 
         Intent intent = new Intent(UserShoppingListActivity.this, DrawMapActivity.class);
         intent.putExtra("tracker", tracker);
+
         startActivity(intent);
     }
 //new

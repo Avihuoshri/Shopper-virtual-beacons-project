@@ -136,6 +136,7 @@ final public class Firebase {
                         p.setProductImageUrl(prod_data.get("productImageUrl"));
                         p.setProductManufacturer(prod_data.get("productManufacturer"));
                         p.setProductName(prod_data.get("productName"));
+                        p.setProductLocation(prod_data.get("productLocation"));
                     }
 
                     p.setProductPrice(spf.getPrice());
@@ -181,6 +182,7 @@ final public class Firebase {
                             store_prod = new StoreProductRef();
                             store_prod.setProductCode((String) parsed_data.get("productCode"));
                             store_prod.setPrice((Double) parsed_data.get("price"));
+                            store_prod.setProductLocation((String) parsed_data.get("productLocation"));
                         }
 
                         o.onNext(store_prod);
