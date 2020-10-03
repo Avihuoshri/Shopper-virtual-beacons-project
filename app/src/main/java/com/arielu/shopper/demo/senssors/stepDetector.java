@@ -30,7 +30,7 @@ public class stepDetector {
 
     private ArrayList<Float> degrees = new ArrayList<Float>();
     private float degree;
-    private List<DepartmentBlock> departments;
+    private ArrayList<DepartmentBlock> departments;
     public void registerListener(OnShopActivity listener) {
         this.listener = listener;
     }
@@ -485,7 +485,7 @@ public class stepDetector {
 
     }
 
-    public List<DepartmentBlock> getDepartments() {
+    public ArrayList<DepartmentBlock> getDepartments() {
         return departments;
     }
 }

@@ -22,6 +22,7 @@ public class DrawMapActivity extends AppCompatActivity {
     private Line line;
     private LineView mlineView;
     private Intent intent;
+    private int width,height;
 
 
     @Override
@@ -34,6 +35,10 @@ public class DrawMapActivity extends AppCompatActivity {
         mlineView = new LineView(this);
         mlineView.setBackgroundResource(R.drawable.map);
         setContentView(mlineView);
+        width = mlineView.getBackground().getIntrinsicWidth();
+        height = mlineView.getBackground().getIntrinsicHeight();
+        mlineView.setFixWidth(width);
+        mlineView.setFixHeight(height);
         fixPaths(sortedTracker);
         addLines();
         mlineView.draw();

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/liron.arad/AndroidStudioProjects/ShopperV2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "D:\\ArielU\\_FinalProject\\ShopperApplication\\ShopperV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "/Users/liron.arad/.gradle/caches/transforms-2/files-2.1/d97474f8f6bd0b4e859655312e2c777c/appcompat-1.0.2/res/values-land/values-land.xml",
+                    "source": "C:\\Users\\ronmo\\.gradle\\caches\\transforms-2\\files-2.1\\d97474f8f6bd0b4e859655312e2c777c\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/liron.arad/.gradle/caches/transforms-2/files-2.1/3295b8d0bda86d39fcda21b87c31a4e7/material-1.0.0/res/values-land/values-land.xml",
+                    "source": "C:\\Users\\ronmo\\.gradle\\caches\\transforms-2\\files-2.1\\3295b8d0bda86d39fcda21b87c31a4e7\\material-1.0.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

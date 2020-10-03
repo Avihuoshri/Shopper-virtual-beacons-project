@@ -24,6 +24,8 @@ public class LineView extends View {
     private Paint paintLines = new Paint();
     private Paint paintPoints = new Paint();
     private Paint paintBeacons = new Paint();
+    int fixWidth;
+    int fixHeight;
 
     private ArrayList<Line> lines  = new ArrayList<>() ;
 
@@ -60,31 +62,30 @@ public class LineView extends View {
         BeaconSetter beaconSetter = new BeaconSetter();
         beaconSetter.initBeacons();
         // draw beacons
+        drawBeacons(canvas,beaconSetter);
+        //draw points
+
+
+        super.onDraw(canvas);
+    }
+    private void drawBeacons(Canvas canvas,BeaconSetter beaconSetter)
+    {
         PointF beacon_draw;
         for(Beacon beacon : beaconSetter.beacons)
         {
             beacon_draw = new PointF();
             beacon_draw.x = beacon.getX() ;//* (420/160) - 160;
             beacon_draw.y = beacon.getY() ;//* (420/160) + 320;
-            canvas.drawPoint(density/2 * beacon_draw.x + 95,density * beacon_draw.y - 60 ,paintBeacons);
+            canvas.drawPoint(beacon_draw.x * fixWidth/700,beacon_draw.y *fixHeight/688 ,paintBeacons);
         }
-        //draw points
+    }
 
-        //draw blocks
-        DepartmentBlockDrawer departmentBlockDrawer = new DepartmentBlockDrawer();
-        LinkedList<PointF> blocks = departmentBlockDrawer.drawAllBlocks();
-        if (blocks.size() > 0) {
-            Log.d(TAG, "onDraw: starting to draw all corners of blocks to check if they are placed currently.");
-            for (PointF pointF : blocks) {
-                canvas.drawPoint(pointF.x, pointF.y, paintPoints);
-            }
-        }
-        else
-        {
-            Toast.makeText(getContext(),"failed to draw blocks",Toast.LENGTH_LONG).show();
-        }
+    public void setFixWidth(int fixWidth) {
+        this.fixWidth = fixWidth;
+    }
 
-        super.onDraw(canvas);
+    public void setFixHeight(int fixHeight) {
+        this.fixHeight = fixHeight;
     }
 
     public void addNewLine(Line line) // Add new line to the array list
