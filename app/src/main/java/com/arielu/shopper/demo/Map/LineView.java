@@ -24,8 +24,8 @@ public class LineView extends View {
     private Paint paintLines = new Paint();
     private Paint paintPoints = new Paint();
     private Paint paintBeacons = new Paint();
-    int fixWidth;
-    int fixHeight;
+    float fixWidth;
+    float fixHeight;
 
     private ArrayList<Line> lines  = new ArrayList<>() ;
 
@@ -43,7 +43,8 @@ public class LineView extends View {
 
 
         paintBeacons.setStrokeWidth(20);
-        float density = getContext().getResources().getDisplayMetrics().density;
+        fixWidth = (float) this.getBackground().getIntrinsicWidth();
+        fixHeight = (float) this.getBackground().getIntrinsicHeight();
 
         //draw lines
         for (int i = 1; i < lines.size() ; i++) {
@@ -60,7 +61,7 @@ public class LineView extends View {
             canvas.drawPoint(pointB.x, pointB.y, paintPoints);
         }
         BeaconSetter beaconSetter = new BeaconSetter();
-        beaconSetter.initBeacons();
+        beaconSetter.initBeacons(fixWidth/700);
         // draw beacons
         drawBeacons(canvas,beaconSetter);
         //draw points
@@ -76,15 +77,21 @@ public class LineView extends View {
             beacon_draw = new PointF();
             beacon_draw.x = beacon.getX() ;//* (420/160) - 160;
             beacon_draw.y = beacon.getY() ;//* (420/160) + 320;
-            canvas.drawPoint(beacon_draw.x * fixWidth/700,beacon_draw.y *fixHeight/688 ,paintBeacons);
+            float x_adjust = ((float) (beacon.getX()) / 700);
+            float y_adjust = ((float) (beacon.getY()) / 688); // Todo  -> validate!
+            //float fixW = fixWidth/700;
+            //float fixH = fixHeight/688;
+            int fixed_x = (int) (x_adjust * (fixWidth - 106));
+            int fixed_y = (int) (y_adjust * (fixHeight - 79));
+            canvas.drawPoint(fixed_x  ,fixed_y ,paintBeacons);
         }
     }
 
-    public void setFixWidth(int fixWidth) {
+    public void setFixWidth(float fixWidth) {
         this.fixWidth = fixWidth;
     }
 
-    public void setFixHeight(int fixHeight) {
+    public void setFixHeight(float fixHeight) {
         this.fixHeight = fixHeight;
     }
 
