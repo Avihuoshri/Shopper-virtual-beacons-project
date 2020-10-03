@@ -6,11 +6,18 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.arielu.shopper.demo.externalHardware.Beacon;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import Gui.DepartmentBlockDrawer;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class LineView extends View {
 
@@ -62,6 +69,20 @@ public class LineView extends View {
             canvas.drawPoint(density/2 * beacon_draw.x + 95,density * beacon_draw.y - 60 ,paintBeacons);
         }
         //draw points
+
+        //draw blocks
+        DepartmentBlockDrawer departmentBlockDrawer = new DepartmentBlockDrawer();
+        LinkedList<PointF> blocks = departmentBlockDrawer.drawAllBlocks();
+        if (blocks.size() > 0) {
+            Log.d(TAG, "onDraw: starting to draw all corners of blocks to check if they are placed currently.");
+            for (PointF pointF : blocks) {
+                canvas.drawPoint(pointF.x, pointF.y, paintPoints);
+            }
+        }
+        else
+        {
+            Toast.makeText(getContext(),"failed to draw blocks",Toast.LENGTH_LONG).show();
+        }
 
         super.onDraw(canvas);
     }
