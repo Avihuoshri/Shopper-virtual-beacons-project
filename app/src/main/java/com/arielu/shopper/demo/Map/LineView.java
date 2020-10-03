@@ -8,12 +8,16 @@ import android.graphics.Paint;
 import android.graphics.PointF;
 import android.view.View;
 
+import com.arielu.shopper.demo.externalHardware.Beacon;
+
 import java.util.ArrayList;
 
 public class LineView extends View {
 
     private Paint paintLines = new Paint();
     private Paint paintPoints = new Paint();
+    private Paint paintBeacons = new Paint();
+
     private ArrayList<Line> lines  = new ArrayList<>() ;
 
     public LineView(Context context) {
@@ -26,6 +30,11 @@ public class LineView extends View {
         paintPoints.setColor(Color.RED);
         paintLines.setStrokeWidth(7);
         paintPoints.setStrokeWidth(15);
+        paintBeacons.setColor(Color.GREEN);
+
+
+        paintBeacons.setStrokeWidth(20);
+        float density = getContext().getResources().getDisplayMetrics().density;
 
         //draw lines
         for (int i = 1; i < lines.size() ; i++) {
@@ -41,7 +50,17 @@ public class LineView extends View {
             canvas.drawPoint(pointA.x, pointA.y, paintLines);
             canvas.drawPoint(pointB.x, pointB.y, paintPoints);
         }
-
+        BeaconSetter beaconSetter = new BeaconSetter();
+        beaconSetter.initBeacons();
+        // draw beacons
+        PointF beacon_draw;
+        for(Beacon beacon : beaconSetter.beacons)
+        {
+            beacon_draw = new PointF();
+            beacon_draw.x = beacon.getX() ;//* (420/160) - 160;
+            beacon_draw.y = beacon.getY() ;//* (420/160) + 320;
+            canvas.drawPoint(density/2 * beacon_draw.x + 95,density * beacon_draw.y - 60 ,paintBeacons);
+        }
         //draw points
 
         super.onDraw(canvas);

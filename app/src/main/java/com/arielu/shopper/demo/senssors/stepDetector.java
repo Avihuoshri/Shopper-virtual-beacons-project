@@ -484,4 +484,8 @@ public class stepDetector {
         departments.add(cashier7);
 
     }
+
+    public List<DepartmentBlock> getDepartments() {
+        return departments;
+    }
 }

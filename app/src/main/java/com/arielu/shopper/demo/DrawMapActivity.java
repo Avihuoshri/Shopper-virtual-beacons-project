@@ -34,7 +34,7 @@ public class DrawMapActivity extends AppCompatActivity {
         mlineView = new LineView(this);
         mlineView.setBackgroundResource(R.drawable.map);
         setContentView(mlineView);
-
+        fixPaths(sortedTracker);
         addLines();
         mlineView.draw();
     }
@@ -78,6 +78,28 @@ public class DrawMapActivity extends AppCompatActivity {
         return tempTracker;
     }
 
+    private void fixPaths(PathTracker pathTracker)
+    {
+        // get list of points between two PathNodes
+
+        PathNode pathNode = tracker.list.head;
+        Path path;
+        ArrayList<Point> points2fix = new ArrayList<>();
+        while (pathNode != tracker.list.tail) {//iterate path points
+            path = pathNode.getPath();
+            for(Point p : path.getPoints()){
+                points2fix.add(p);
+            }
+            pathNode = pathNode.next;
+        }
+    }
+    private PointF lineFixer(PointF a,PointF b)
+    {
+        float x = (a.x+b.x)/2;
+        float y = (a.y+b.y)/2;
+        PointF mid = new PointF(x,y);
+        return mid;
+    }
     private void addLines() {
         PathNode node = sortedTracker.list.head;
         if (!node.hasNext()) {
@@ -102,8 +124,12 @@ public class DrawMapActivity extends AppCompatActivity {
                     //create new line from two points in the path
                     PointF pointA = new PointF(pCurrent.getX(), pCurrent.getY());
                     PointF pointB = new PointF(pNext.getX(), pNext.getY());
-                    Line line = new Line(pointA, pointB);
+                    //PointF mid = lineFixer(pointA,pointB);
+                    //Line line1 = new Line(pointA, mid);
+                    //Line line2 = new Line(pointB,mid);
+                    Line line = new Line(pointA,pointB);
                     mlineView.addNewLine(line);
+                    //mlineView.addNewLine(line2);
                 }
 
                 node = node.getNext();

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import androidx.annotation.NonNull;
 
+@SuppressWarnings("deprecation")
 @Deprecated
 public class Product implements Serializable {
     private String itemCode;
