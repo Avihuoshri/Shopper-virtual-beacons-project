@@ -118,10 +118,11 @@ public class ShortestPath
         return false; // Doesn't fall in any of the above cases
     }
 
-    // build graph node from current prosucts list and beacons points
-    static ArrayList<Point> addGraphNodes(PathTracker tracker){
-        ArrayList<Point>graph = new ArrayList<>();
+    // build graph node from current products list and beacons points
+    static ArrayList<Point> addGraphNodes(PathTracker tracker, float fixWidth){
+
         BeaconSetter beaconSetter = new BeaconSetter();
+        beaconSetter.initBeacons(fixWidth / 700);
         ArrayList<Point> graphNodes = new ArrayList<>();
 
         for(Beacon beacon : beaconSetter.beacons) {
@@ -141,14 +142,14 @@ public class ShortestPath
                 graphNodes.add(node.getPath().getPoints().get(i));
             }
 
-        return graph;
+        return graphNodes;
     }
 
     //use doIntersect function to build only the right edges
     //use DiGraph.add to build full graph with edges
-    public DiGraph<Point> buildFullGraph(PathTracker tracker){
+    public DiGraph<Point> buildFullGraph(PathTracker tracker, float fixWidth){
         DiGraph<Point> graph = new DiGraph<>();
-        ArrayList<Point> graphNodes = addGraphNodes(tracker);
+        ArrayList<Point> graphNodes = addGraphNodes(tracker,fixWidth);
         for(int x1 = 0; x1 < graphNodes.size(); x1++){
             for(int x2 = 0; x2 < graphNodes.size(); x2++){
                 for(int y1 = 0; y1 < graphNodes.size(); y1++){
@@ -170,8 +171,8 @@ public class ShortestPath
     }
 
     //use DiGraph.getPath to get shortestPath
-    public List<String> getShortestPath(PathTracker tracker,Point from, Point to){
-        DiGraph<Point> graph = buildFullGraph(tracker);
+    public List<String> getShortestPath(PathTracker tracker,Point from, Point to,float fixWidth){
+        DiGraph<Point> graph = buildFullGraph(tracker, fixWidth);
         return graph.getPath(from, to);
     }
 

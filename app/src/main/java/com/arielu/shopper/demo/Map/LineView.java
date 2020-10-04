@@ -24,8 +24,8 @@ public class LineView extends View {
     private Paint paintLines = new Paint();
     private Paint paintPoints = new Paint();
     private Paint paintBeacons = new Paint();
-    float fixWidth;
-    float fixHeight;
+    public float fixWidth;
+    public float fixHeight;
 
     private ArrayList<Line> lines  = new ArrayList<>() ;
 

@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.arielu.shopper.demo.Map.Line;
 import com.arielu.shopper.demo.Map.LineView;
+import com.arielu.shopper.demo.NavigationAlgorithms.DiGraph;
+import com.arielu.shopper.demo.NavigationAlgorithms.ShortestPath;
 import com.arielu.shopper.demo.NavigationElements.Path;
 import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.NavigationElements.PathTracker;
@@ -42,6 +44,11 @@ public class DrawMapActivity extends AppCompatActivity {
         fixPaths(sortedTracker);
         addLines();
         mlineView.draw();
+
+        //TODO - remove
+        ShortestPath shortestPathGenerator = new ShortestPath();
+        DiGraph<Point> graph =  shortestPathGenerator.buildFullGraph(tracker, mlineView.fixWidth);
+        System.out.println(graph.edgesToString());
     }
 
     private PathTracker sortListforDrawingLines(PathTracker tracker) {
@@ -156,4 +163,5 @@ public class DrawMapActivity extends AppCompatActivity {
             }
         }
     }
+
 }
