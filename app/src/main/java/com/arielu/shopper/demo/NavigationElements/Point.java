@@ -2,7 +2,7 @@ package com.arielu.shopper.demo.NavigationElements;
 
 import java.io.Serializable;
 
-public class Point implements Serializable {
+public class Point implements Serializable, Comparable<Point> {
     private int x;
     private int y;
 
@@ -14,13 +14,13 @@ public class Point implements Serializable {
     public Point(String point){
         int splitIndex = point.indexOf(',');
         if(splitIndex != -1){
-            String iString = point.substring(0,splitIndex);
-            String jString = point.substring(splitIndex+1,point.length());
-            this.x = Integer.parseInt(iString);
-            this.y = Integer.parseInt(jString);
+            String xString = point.substring(0,splitIndex);
+            String yString = point.substring(splitIndex+1,point.length());
+            this.x = Integer.parseInt(xString);
+            this.y = Integer.parseInt(yString);
         }
-
     }
+
     public Point(Point point) {
         this.x = point.x;
         this.y = point.y;
@@ -48,5 +48,10 @@ public class Point implements Serializable {
                 " (" + x +
                 "," + y +
                 ')';
+    }
+
+    @Override
+    public int compareTo(Point point) {
+        return (int) Math.sqrt((this.x-point.getX())*(this.x-point.getX()) + (this.y-point.getY())*(this.y-point.getY()));
     }
 }
