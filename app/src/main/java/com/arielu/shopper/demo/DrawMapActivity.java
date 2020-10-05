@@ -25,8 +25,8 @@ public class DrawMapActivity extends AppCompatActivity {
     private LineView mlineView;
     private Intent intent;
     private float width,height;
-
-
+    ShortestPath shortestPathGenerator;
+    DiGraph<Point> graph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +42,13 @@ public class DrawMapActivity extends AppCompatActivity {
         mlineView.setFixWidth(width);
         mlineView.setFixHeight(height);
         fixPaths(sortedTracker);
+        shortestPathGenerator = new ShortestPath();
+        graph = shortestPathGenerator.buildFullGraph(mlineView.fixWidth);
+
         addLines();
         mlineView.draw();
 
-        //TODO - remove
-        ShortestPath shortestPathGenerator = new ShortestPath();
-        DiGraph<Point> graph =  shortestPathGenerator.buildFullGraph(tracker, mlineView.fixWidth);
-        System.out.println(graph.edgesToString());
+
     }
 
     private PathTracker sortListforDrawingLines(PathTracker tracker) {
@@ -136,12 +136,8 @@ public class DrawMapActivity extends AppCompatActivity {
                     //create new line from two points in the path
                     PointF pointA = new PointF(pCurrent.getX(), pCurrent.getY());
                     PointF pointB = new PointF(pNext.getX(), pNext.getY());
-                    //PointF mid = lineFixer(pointA,pointB);
-                    //Line line1 = new Line(pointA, mid);
-                    //Line line2 = new Line(pointB,mid);
                     Line line = new Line(pointA,pointB);
                     mlineView.addNewLine(line);
-                    //mlineView.addNewLine(line2);
                 }
 
                 node = node.getNext();
@@ -158,8 +154,15 @@ public class DrawMapActivity extends AppCompatActivity {
                 Line line = new Line(pointA, pointB);
 
                 mlineView.addNewLine(line);
-
-
+            }
+            //TODO - chenge this part to draw only shopping list path and not the all beacons graph
+            for(int i = 0; i < graph.edges.size(); i++) {
+                Point from = graph.edges.get(i).from.getValue();
+                Point to = graph.edges.get(i).to.getValue();
+                PointF beaconA = new PointF(from.getX(), from.getY());
+                PointF beaconB = new PointF(to.getX(), to.getY());
+                Line beaconLine = new Line(beaconA, beaconB);
+                mlineView.addNewBeaconLine(beaconLine);
             }
         }
     }

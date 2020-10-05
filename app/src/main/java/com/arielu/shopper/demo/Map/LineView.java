@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.arielu.shopper.demo.NavigationElements.Path;
 import com.arielu.shopper.demo.externalHardware.Beacon;
 
 import java.util.ArrayList;
@@ -24,10 +25,12 @@ public class LineView extends View {
     private Paint paintLines = new Paint();
     private Paint paintPoints = new Paint();
     private Paint paintBeacons = new Paint();
+    private Paint paintBeaconsLines = new Paint();
     public float fixWidth;
     public float fixHeight;
 
     private ArrayList<Line> lines  = new ArrayList<>() ;
+    private ArrayList<Line> beaconLines  = new ArrayList<>() ;
 
     public LineView(Context context) {
         super(context);
@@ -36,13 +39,17 @@ public class LineView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         paintLines.setColor(Color.BLUE);
-        paintPoints.setColor(Color.RED);
         paintLines.setStrokeWidth(7);
+
+        paintPoints.setColor(Color.RED);
         paintPoints.setStrokeWidth(15);
+
         paintBeacons.setColor(Color.GREEN);
-
-
         paintBeacons.setStrokeWidth(20);
+
+        paintBeaconsLines.setColor(Color.BLACK);
+        paintBeacons.setStrokeWidth(7);
+
         fixWidth = (float) this.getBackground().getIntrinsicWidth();
         fixHeight = (float) this.getBackground().getIntrinsicHeight();
 
@@ -57,9 +64,34 @@ public class LineView extends View {
             pointB.y = lines.get(i).pointB.y ;
 
             canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintLines);
-            canvas.drawPoint(pointA.x, pointA.y, paintLines);
+            canvas.drawPoint(pointA.x, pointA.y, paintPoints);
             canvas.drawPoint(pointB.x, pointB.y, paintPoints);
         }
+
+        for (int i = 1; i < beaconLines.size() ; i++) {
+            PointF pointA = new PointF();
+            PointF pointB = new PointF();
+
+            float x1_adjust = ((float) (beaconLines.get(i).pointA.x) / 700);
+            float y1_adjust = ((float) (beaconLines.get(i).pointA.y) / 688);
+            int fixed_x1 = (int) (x1_adjust * (fixWidth - 106));
+            int fixed_y1 = (int) (y1_adjust * (fixHeight - 79));
+            float x2_adjust = ((float) (beaconLines.get(i).pointB.x) / 700);
+            float y2_adjust = ((float) (beaconLines.get(i).pointB.y) / 688);
+            int fixed_x2 = (int) (x2_adjust * (fixWidth - 106));
+            int fixed_y2 = (int) (y2_adjust * (fixHeight - 79));
+
+            pointA.x = fixed_x1 ;
+            pointA.y = fixed_y1 ;
+            pointB.x = fixed_x2;
+            pointB.y = fixed_y2 ;
+
+
+            canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintBeaconsLines);
+            canvas.drawPoint(pointA.x, pointA.y, paintBeacons);
+            canvas.drawPoint(pointB.x, pointB.y, paintBeacons);
+        }
+
         BeaconSetter beaconSetter = new BeaconSetter();
         beaconSetter.initBeacons(fixWidth/700);
         // draw beacons
@@ -104,6 +136,10 @@ public class LineView extends View {
     {
         invalidate();
         requestLayout();
+    }
+
+    public void addNewBeaconLine(Line beaconLine) {
+        beaconLines.add(beaconLine) ;
     }
 }
 

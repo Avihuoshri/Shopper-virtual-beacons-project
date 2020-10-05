@@ -29,8 +29,8 @@ public class DiGraph<T extends Comparable<T>> {
 
     ;
 
-    private ArrayList<Vertex> vertices;
-    private ArrayList<Edge> edges;
+    public ArrayList<Vertex> vertices;
+    public ArrayList<Edge> edges;
 
     /**
      * Default Constructor
@@ -352,8 +352,15 @@ public class DiGraph<T extends Comparable<T>> {
         return retval;
     }
 
+    public ArrayList<Vertex> getVertices() {
+        return vertices;
+    }
 
-    class Vertex implements Comparable<Vertex> {
+    public ArrayList<Edge> getEdges() {
+        return edges;
+    }
+
+    public class Vertex implements Comparable<Vertex> {
         T value;
 
         // variables for Dijkstra Tree
@@ -412,12 +419,16 @@ public class DiGraph<T extends Comparable<T>> {
             for (Vertex each : outgoing) retval += each.value + " ";
             return retval;
         }
+
+        public T getValue() {
+            return value;
+        }
     }
 
-    class Edge {
-        Vertex from;
-        Vertex to;
-        int cost;
+    public class Edge {
+        public Vertex from;
+        public Vertex to;
+        public int cost;
 
         /**
          * @param v1   value of type T for 'from' vertex
