@@ -1,6 +1,5 @@
 package com.arielu.shopper.demo.externalHardware;
 
-import com.arielu.shopper.demo.Map.DepartmentBlock;
 import com.arielu.shopper.demo.NavigationElements.Point;
 
 public class Beacon extends Point{

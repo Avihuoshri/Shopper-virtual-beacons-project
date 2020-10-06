@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.arielu.shopper.demo.Map.Line;
@@ -14,7 +17,6 @@ import com.arielu.shopper.demo.NavigationElements.Path;
 import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.NavigationElements.PathTracker;
 import com.arielu.shopper.demo.NavigationElements.PathNode;
-import com.arielu.shopper.demo.R;
 
 import java.util.ArrayList;
 
@@ -43,14 +45,20 @@ public class DrawMapActivity extends AppCompatActivity {
         mlineView.setFixHeight(height);
         fixPaths(sortedTracker);
         shortestPathGenerator = new ShortestPath();
-        graph = shortestPathGenerator.buildFullGraph(mlineView.fixWidth);
+        graph = shortestPathGenerator.buildFullGraph();
 
         addLines();
         mlineView.draw();
-
-
     }
+    public boolean onTouchEvent(MotionEvent event) {
+        // MotionEvent object holds X-Y values
+        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+            String text = "You click at x = " + event.getX() + " and y = " + (event.getY() - 63);
+            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        }
 
+        return super.onTouchEvent(event);
+    }
     private PathTracker sortListforDrawingLines(PathTracker tracker) {
         PathTracker tempTracker = new PathTracker();
         tempTracker.firstPath = null;

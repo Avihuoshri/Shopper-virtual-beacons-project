@@ -2,7 +2,6 @@ package com.arielu.shopper.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-import io.reactivex.rxjava3.core.Observable;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,14 +13,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.arielu.shopper.demo.NavigationElements.Path;
-import com.arielu.shopper.demo.NavigationElements.PathTracker;
-import com.arielu.shopper.demo.NavigationElements.Point;
-import com.arielu.shopper.demo.database.Firebase;
 import com.arielu.shopper.demo.classes.Product;
 import com.arielu.shopper.demo.database.Firebase2;
 import com.arielu.shopper.demo.models.SessionProduct;
-import com.arielu.shopper.demo.utilities.ObserverFirebaseTemplate;
 
 import java.util.ArrayList;
 import java.util.List;

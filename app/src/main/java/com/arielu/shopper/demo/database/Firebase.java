@@ -3,7 +3,6 @@ package com.arielu.shopper.demo.database;
 
 import android.util.Log;
 
-import com.arielu.shopper.demo.Item;
 import com.arielu.shopper.demo.classes.Branch;
 import com.arielu.shopper.demo.classes.Shopping_list;
 import com.arielu.shopper.demo.models.Message;
@@ -28,7 +27,6 @@ import java.util.Map;
 import androidx.annotation.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
-import io.reactivex.rxjava3.subjects.Subject;
 
 @Deprecated
 final public class Firebase {

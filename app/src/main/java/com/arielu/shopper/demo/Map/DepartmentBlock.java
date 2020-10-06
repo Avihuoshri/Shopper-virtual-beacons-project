@@ -30,9 +30,7 @@ public class DepartmentBlock {
             e.printStackTrace();
         }
 
-
     }
-
 
     public Point getLeftUpCorner() {
         return leftUpCorner;

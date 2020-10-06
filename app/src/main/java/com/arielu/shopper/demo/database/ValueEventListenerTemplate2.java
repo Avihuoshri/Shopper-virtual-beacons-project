@@ -5,8 +5,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-import io.reactivex.rxjava3.core.ObservableEmitter;
-
 public class ValueEventListenerTemplate2 implements ValueEventListener {
 
     protected DelegateonDataChangeFunction onDataChangeFunction;

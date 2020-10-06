@@ -6,19 +6,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.arielu.shopper.demo.NavigationElements.Path;
+import com.arielu.shopper.demo.NavigationAlgorithms.ShortestPath;
+
 import com.arielu.shopper.demo.externalHardware.Beacon;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-
-import Gui.DepartmentBlockDrawer;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class LineView extends View {
 
@@ -26,11 +20,15 @@ public class LineView extends View {
     private Paint paintPoints = new Paint();
     private Paint paintBeacons = new Paint();
     private Paint paintBeaconsLines = new Paint();
+    private Paint paintDepartments = new Paint();
+    private Paint paintDepartmentsLines = new Paint();
+
     public float fixWidth;
     public float fixHeight;
 
     private ArrayList<Line> lines  = new ArrayList<>() ;
     private ArrayList<Line> beaconLines  = new ArrayList<>() ;
+    private ArrayList<Line> departmentBlockLines  = new ArrayList<>() ;
 
     public LineView(Context context) {
         super(context);
@@ -38,17 +36,24 @@ public class LineView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        ShortestPath shortestPath = new ShortestPath() ;
+        shortestPath.initDepartments();
         paintLines.setColor(Color.BLUE);
         paintLines.setStrokeWidth(7);
 
         paintPoints.setColor(Color.RED);
         paintPoints.setStrokeWidth(15);
 
-        paintBeacons.setColor(Color.GREEN);
-        paintBeacons.setStrokeWidth(20);
+        paintBeacons.setColor(Color.MAGENTA);
 
         paintBeaconsLines.setColor(Color.BLACK);
         paintBeacons.setStrokeWidth(7);
+
+        paintDepartments.setColor(Color.BLACK);
+        paintDepartments.setStrokeWidth(13);
+        paintDepartmentsLines.setColor(Color.RED);
+        paintDepartmentsLines.setStrokeWidth(7);
+
 
         fixWidth = (float) this.getBackground().getIntrinsicWidth();
         fixHeight = (float) this.getBackground().getIntrinsicHeight();
@@ -72,20 +77,10 @@ public class LineView extends View {
             PointF pointA = new PointF();
             PointF pointB = new PointF();
 
-            float x1_adjust = ((float) (beaconLines.get(i).pointA.x) / 700);
-            float y1_adjust = ((float) (beaconLines.get(i).pointA.y) / 688);
-            int fixed_x1 = (int) (x1_adjust * (fixWidth - 106));
-            int fixed_y1 = (int) (y1_adjust * (fixHeight - 79));
-            float x2_adjust = ((float) (beaconLines.get(i).pointB.x) / 700);
-            float y2_adjust = ((float) (beaconLines.get(i).pointB.y) / 688);
-            int fixed_x2 = (int) (x2_adjust * (fixWidth - 106));
-            int fixed_y2 = (int) (y2_adjust * (fixHeight - 79));
-
-            pointA.x = fixed_x1 ;
-            pointA.y = fixed_y1 ;
-            pointB.x = fixed_x2;
-            pointB.y = fixed_y2 ;
-
+            pointA.x = beaconLines.get(i).pointA.x ;
+            pointA.y = beaconLines.get(i).pointA.y;
+            pointB.x = beaconLines.get(i).pointB.x;
+            pointB.y = beaconLines.get(i).pointB.y ;
 
             canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintBeaconsLines);
             canvas.drawPoint(pointA.x, pointA.y, paintBeacons);
@@ -93,12 +88,12 @@ public class LineView extends View {
         }
 
         BeaconSetter beaconSetter = new BeaconSetter();
-        beaconSetter.initBeacons(fixWidth/700);
+        beaconSetter.init();
         // draw beacons
         drawBeacons(canvas,beaconSetter);
         //draw points
 
-
+        drawDepatments(shortestPath.getDepartments() , canvas) ;
         super.onDraw(canvas);
     }
     private void drawBeacons(Canvas canvas,BeaconSetter beaconSetter)
@@ -109,13 +104,13 @@ public class LineView extends View {
             beacon_draw = new PointF();
             beacon_draw.x = beacon.getX() ;//* (420/160) - 160;
             beacon_draw.y = beacon.getY() ;//* (420/160) + 320;
-            float x_adjust = ((float) (beacon.getX()) / 700);
-            float y_adjust = ((float) (beacon.getY()) / 688); // Todo  -> validate!
+//            float x_adjust = ((float) (beacon.getX()) / 700);
+//            float y_adjust = ((float) (beacon.getY()) / 688); // Todo  -> validate!
             //float fixW = fixWidth/700;
             //float fixH = fixHeight/688;
-            int fixed_x = (int) (x_adjust * (fixWidth - 106));
-            int fixed_y = (int) (y_adjust * (fixHeight - 79));
-            canvas.drawPoint(fixed_x  ,fixed_y ,paintBeacons);
+//            int fixed_x = (int) (x_adjust * (fixWidth - 106));
+//            int fixed_y = (int) (y_adjust * (fixHeight - 79));
+            canvas.drawPoint(beacon_draw.x  ,beacon_draw.y ,paintBeacons);
         }
     }
 
@@ -131,6 +126,29 @@ public class LineView extends View {
     {
         lines.add(line) ;
     }
+
+    public void drawDepatments(ArrayList<DepartmentBlock> departments , Canvas canvas) // Add new line to the array list
+    {
+        for(DepartmentBlock department : departments)
+        {
+            PointF leftDown = new PointF(department.getLeftDownCorner().getX() , department.getLeftDownCorner().getY());
+            PointF leftUp = new PointF(department.getLeftUpCorner().getX() , department.getLeftUpCorner().getY());
+            PointF rightDown = new PointF(department.getRightDownCorner().getX() , department.getRightDownCorner().getY());
+            PointF rightUp = new PointF(department.getRightUpCorner().getX() , department.getRightUpCorner().getY());
+
+            canvas.drawPoint(leftDown.x  ,leftDown.y ,paintDepartments);
+            canvas.drawPoint(leftUp.x  ,leftUp.y ,paintDepartments);
+            canvas.drawPoint(rightDown.x  ,rightDown.y ,paintDepartments);
+            canvas.drawPoint(rightUp.x  ,rightUp.y ,paintDepartments);
+
+
+            canvas.drawLine(leftDown.x  ,leftDown.y , leftUp.x  ,leftUp.y ,paintDepartmentsLines);
+            canvas.drawLine(rightDown.x  ,rightDown.y , rightUp.x  ,rightUp.y ,paintDepartmentsLines);
+            canvas.drawLine(leftDown.x  ,leftDown.y , rightDown.x  ,rightDown.y ,paintDepartmentsLines);
+            canvas.drawLine(rightUp.x  ,rightUp.y , leftUp.x  ,leftUp.y ,paintDepartmentsLines);
+        }
+    }
+
 
     public void draw()
     {

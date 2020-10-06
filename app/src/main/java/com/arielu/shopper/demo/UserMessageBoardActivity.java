@@ -2,10 +2,7 @@ package com.arielu.shopper.demo;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.arielu.shopper.demo.database.Firebase;
 import com.arielu.shopper.demo.database.Firebase2;
@@ -14,7 +11,6 @@ import com.arielu.shopper.demo.models.UserSessionData;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import androidx.annotation.Nullable;

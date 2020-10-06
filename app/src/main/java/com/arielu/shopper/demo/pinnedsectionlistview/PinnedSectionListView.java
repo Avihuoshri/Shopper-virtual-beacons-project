@@ -3,7 +3,6 @@ package com.arielu.shopper.demo.pinnedsectionlistview;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;

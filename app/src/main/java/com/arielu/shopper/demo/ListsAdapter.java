@@ -10,12 +10,10 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.arielu.shopper.demo.classes.Shopping_list;
-import com.arielu.shopper.demo.models.SessionProduct;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.TreeMap;
 
 import androidx.core.content.ContextCompat;
 

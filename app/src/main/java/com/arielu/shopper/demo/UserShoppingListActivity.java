@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,8 +19,6 @@ import android.widget.ExpandableListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.arielu.shopper.demo.NavigationAlgorithms.DiGraph;
-import com.arielu.shopper.demo.NavigationAlgorithms.ShortestPath;
 import com.arielu.shopper.demo.NavigationElements.Path;
 import com.arielu.shopper.demo.NavigationElements.PathTracker;
 import com.arielu.shopper.demo.NavigationElements.Point;

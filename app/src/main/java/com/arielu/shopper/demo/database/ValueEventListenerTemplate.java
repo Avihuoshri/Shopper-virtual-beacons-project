@@ -1,6 +1,5 @@
 package com.arielu.shopper.demo.database;
 
-import com.arielu.shopper.demo.models.User;
 import com.arielu.shopper.demo.utilities.DelegateonDataChangeFunction;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

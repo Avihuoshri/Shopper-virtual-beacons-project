@@ -5,7 +5,6 @@ import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.OnShopActivity;
 import com.arielu.shopper.demo.interfaces.StepListener;
 import java.util.ArrayList;
-import java.util.List;
 
 public class stepDetector {
 

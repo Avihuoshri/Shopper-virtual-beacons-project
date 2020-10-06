@@ -2,23 +2,17 @@ package com.arielu.shopper.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentManager;
-import io.reactivex.rxjava3.core.Observable;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.arielu.shopper.demo.classes.Shopping_list;
-import com.arielu.shopper.demo.database.Firebase;
 import com.arielu.shopper.demo.database.Firebase2;
 import com.arielu.shopper.demo.models.Permission;
-import com.arielu.shopper.demo.utilities.ObserverFirebaseTemplate;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
