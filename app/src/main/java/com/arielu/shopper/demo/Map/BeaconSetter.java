@@ -48,11 +48,11 @@ public void init()
 
     private void initBeacons() {
         beacons = new ArrayList<>();
-        Beacon b1 = new Beacon(290 , 1463); //290 , 1542
-        Beacon b2 = new Beacon(841 , 1463); // 841 , 1542
+        Beacon b1 = new Beacon(326 , 1542); //290 , 1542
+        Beacon b2 = new Beacon(815 , 1542); // 841 , 1542
         Beacon b3 = new Beacon(70 , 1342);
         Beacon b4 = new Beacon(146 , 1342);
-        Beacon b5 = new Beacon(240, 1342);
+        Beacon b5 = new Beacon(255, 1342);
         Beacon b6 = new Beacon(326 , 1342);
         Beacon b7 = new Beacon(402 , 1342);
         Beacon b8 = new Beacon(479 , 1342);
@@ -62,21 +62,21 @@ public void init()
         Beacon b12 = new Beacon(815 , 1342);
         Beacon b13 = new Beacon(70  , 1201);
         Beacon b14 = new Beacon(146 , 1201);
-        Beacon b15 = new Beacon(240 , 1201);
+        Beacon b15 = new Beacon(255 , 1201);
         Beacon b16 = new Beacon(815 , 1224);
         Beacon b17 = new Beacon(986 ,1224);
         Beacon b18 = new Beacon(70 , 1042);
         Beacon b19 = new Beacon(146 , 1042);
-        Beacon b20 = new Beacon(240 , 1042);
+        Beacon b20 = new Beacon(255 , 1042);
         Beacon b21 = new Beacon(815 , 1089);
         Beacon b22 = new Beacon(986 , 1089);
         Beacon b23 = new Beacon(70  , 906);
         Beacon b24 = new Beacon(146 , 906);
-        Beacon b25 = new Beacon(240 , 906);
+        Beacon b25 = new Beacon(255 , 906);
         Beacon b26 = new Beacon(815 , 974 );
         Beacon b27 = new Beacon(986 , 974);
         Beacon b28 = new Beacon(70  , 768);
-        Beacon b29 = new Beacon(240 , 824);
+        Beacon b29 = new Beacon(255 , 824);
         Beacon b30 = new Beacon(326 , 824);
         Beacon b31 = new Beacon(402 , 824);
         Beacon b32 = new Beacon(479 , 824);
@@ -86,19 +86,19 @@ public void init()
         Beacon b36 = new Beacon(815 , 824);
         Beacon b37 = new Beacon(986 , 824);
         Beacon b38 = new Beacon(70 , 636);
-        Beacon b39 = new Beacon(170 , 636);
+        Beacon b39 = new Beacon(185 , 636);
         Beacon b40 = new Beacon(255, 636);
         Beacon b41 = new Beacon(815 , 700);
         Beacon b42 = new Beacon(897 , 700);
         Beacon b43 = new Beacon(986 , 700);
         Beacon b44 = new Beacon(70 , 491);
-        Beacon b45 = new Beacon(170 , 491);
+        Beacon b45 = new Beacon(185 , 491);
         Beacon b46 = new Beacon(255 , 491);
         Beacon b47 = new Beacon(815 , 591);
         Beacon b48 = new Beacon(897 , 591);
         Beacon b49 = new Beacon(986 , 591);
         Beacon b50 = new Beacon(70  , 353);
-        Beacon b51 = new Beacon(235 , 303);
+        Beacon b51 = new Beacon(255 , 303);
         Beacon b52 = new Beacon(326, 303);
         Beacon b53 = new Beacon(402, 303);
         Beacon b54 = new Beacon(479, 303);
@@ -106,7 +106,7 @@ public void init()
         Beacon b56 = new Beacon(644, 303);
         Beacon b57 = new Beacon(724, 303);
         Beacon b58 = new Beacon(815 , 303);
-        Beacon b59 = new Beacon(894 , 341);
+        Beacon b59 = new Beacon(815 , 341);
         Beacon b60 = new Beacon(986 , 341);
         Beacon b61 = new Beacon(117 , 118);
         Beacon b62 = new Beacon(229, 118);
@@ -115,11 +115,24 @@ public void init()
         Beacon b65 = new Beacon(479, 118);
         Beacon b66 = new Beacon(606 , 118);
         Beacon b67 = new Beacon(697 , 118);
-        Beacon b68 = new Beacon(797 , 118);
+        Beacon b68 = new Beacon(815 , 118);
         Beacon b69 = new Beacon(986 , 118);
         Beacon b70 = new Beacon(986 , 232);
-        Beacon b71 = new Beacon(797 , 232 );
-        Beacon b72 = new Beacon(170 , 303 );
+        Beacon b71 = new Beacon(815 , 232 );
+        Beacon b72 = new Beacon(185 , 303 );
+        Beacon b73 = new Beacon(117  , 353 );
+        Beacon b74 = new Beacon(117 , 303 );
+        Beacon b75 = new Beacon(255  , 768 );
+        Beacon b76 = new Beacon(697, 303 );
+        Beacon b77 = new Beacon(815, 470 );
+        Beacon b78 = new Beacon(897, 470 );
+        Beacon b79 = new Beacon(606, 303 );
+        Beacon b80 = new Beacon(697, 303 );
+        Beacon b81 = new Beacon(697, 303 );
+
+        beacons.add(b77);
+        beacons.add(b78);
+        beacons.add(b79);
 
         beacons.add(b1);
         beacons.add(b2);
@@ -193,6 +206,10 @@ public void init()
         beacons.add(b70);
         beacons.add(b71);
         beacons.add(b72);
+        beacons.add(b73);
+        beacons.add(b74);
+        beacons.add(b75);
+        beacons.add(b76);
     }
 
 

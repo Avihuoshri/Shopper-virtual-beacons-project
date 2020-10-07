@@ -147,8 +147,6 @@ public class ShortestPath
                     Point from = graphNodes.get(a);
                     Point to = graphNodes.get(b);
                     for (DepartmentBlock department : departments) {
-                        Point leftDown = department.getLeftDownCorner();
-                        Point rightUp = department.getRightUpCorner();
                         Boolean rectangleEdgeOne = (doIntersect(from, to, department.getLeftDownCorner(), department.getLeftUpCorner()));
                         Boolean rectangleEdgeTwo = (doIntersect(from, to, department.getLeftUpCorner(), department.getRightUpCorner()));
                         Boolean rectangleEdgeThree = (doIntersect(from, to, department.getRightUpCorner(), department.getRightDownCorner()));
@@ -157,8 +155,7 @@ public class ShortestPath
                             intersectOff = false;
                         }
                     }
-
-                    if (intersectOff) {
+                    if (intersectOff && cheackXYcoordinates(from , to)) {
                         graph.add(from, to, from.compareTo(to));
                     }
                 }
@@ -166,6 +163,12 @@ public class ShortestPath
         }
         return graph;
     }
+private boolean cheackXYcoordinates(Point beacon1 , Point beacon2 )
+{
+    if(beacon1.getX() == beacon2.getX() || beacon1.getY() == beacon2.getY())
+        return true;
+    return false;
+}
 
 public DiGraph<Point> getGraph()
 {
@@ -183,17 +186,17 @@ public DiGraph<Point> getGraph()
 
 
         //florist Department
-//        DepartmentBlock florist = new DepartmentBlock();
-//        Point leftDown = new Point(92,1491); // 60 ->
-//        Point rightUp = new Point(163,1443);
-//        florist.setLeftDownCorner(leftDown);
-//        florist.setRightUpCorner(rightUp);
-//        florist.setRightDownleftUpCorners();
-//
-//        departments.add(florist);
-//
-//
-//
+        DepartmentBlock florist = new DepartmentBlock();
+        Point leftDown = new Point(92,1491); // 60 ->
+        Point rightUp = new Point(163,1443);
+        florist.setLeftDownCorner(leftDown);
+        florist.setRightUpCorner(rightUp);
+        florist.setRightDownleftUpCorners();
+
+        departments.add(florist);
+
+
+
 //        //PRODUCE Department
         DepartmentBlock p1 = new DepartmentBlock();
         DepartmentBlock p2 = new DepartmentBlock();
