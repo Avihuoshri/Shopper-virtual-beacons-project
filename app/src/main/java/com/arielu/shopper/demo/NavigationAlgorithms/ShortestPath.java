@@ -142,28 +142,31 @@ public class ShortestPath
         initDepartments();
         for(int a = 0; a < graphNodes.size(); a++){
             for(int b = 0; b < graphNodes.size(); b++){
-                for (DepartmentBlock department : departments){
-                    if(a < b) {
-                        Point from = graphNodes.get(a);
-                        Point to = graphNodes.get(b);
-
+                if(a<b) {
+                    boolean intersectOff = true;
+                    Point from = graphNodes.get(a);
+                    Point to = graphNodes.get(b);
+                    for (DepartmentBlock department : departments) {
+                        Point leftDown = department.getLeftDownCorner();
+                        Point rightUp = department.getRightUpCorner();
                         Boolean rectangleEdgeOne = (doIntersect(from, to, department.getLeftDownCorner(), department.getLeftUpCorner()));
                         Boolean rectangleEdgeTwo = (doIntersect(from, to, department.getLeftUpCorner(), department.getRightUpCorner()));
                         Boolean rectangleEdgeThree = (doIntersect(from, to, department.getRightUpCorner(), department.getRightDownCorner()));
                         Boolean rectangleEdgeFour = (doIntersect(from, to, department.getRightDownCorner(), department.getLeftDownCorner()));
-
                         if (rectangleEdgeOne || rectangleEdgeTwo || rectangleEdgeThree || rectangleEdgeFour) {
-                            continue;
+                            intersectOff = false;
                         }
-                        else{
-                            graph.add(from, to, from.compareTo(to));
-                        }
+                    }
+
+                    if (intersectOff) {
+                        graph.add(from, to, from.compareTo(to));
                     }
                 }
             }
         }
         return graph;
     }
+
 public DiGraph<Point> getGraph()
 {
     return graph ;
@@ -180,17 +183,17 @@ public DiGraph<Point> getGraph()
 
 
         //florist Department
-        DepartmentBlock florist = new DepartmentBlock();
-        Point leftDown = new Point(92,1491); // 60 ->
-        Point rightUp = new Point(163,1443);
-        florist.setLeftDownCorner(leftDown);
-        florist.setRightUpCorner(rightUp);
-        florist.setRightDownleftUpCorners();
-
-        departments.add(florist);
-
-
-
+//        DepartmentBlock florist = new DepartmentBlock();
+//        Point leftDown = new Point(92,1491); // 60 ->
+//        Point rightUp = new Point(163,1443);
+//        florist.setLeftDownCorner(leftDown);
+//        florist.setRightUpCorner(rightUp);
+//        florist.setRightDownleftUpCorners();
+//
+//        departments.add(florist);
+//
+//
+//
 //        //PRODUCE Department
         DepartmentBlock p1 = new DepartmentBlock();
         DepartmentBlock p2 = new DepartmentBlock();
@@ -212,11 +215,11 @@ public DiGraph<Point> getGraph()
         p3.setLeftDownCorner(new Point(93,1154));
         p3.setRightUpCorner(new Point(128,1105));
         p3.setRightDownleftUpCorners();
-
+//
         p4.setLeftDownCorner(new Point(179,1154));
         p4.setRightUpCorner(new Point(217,1104));
         p4.setRightDownleftUpCorners();
-
+//
         p5.setLeftDownCorner(new Point(93,995));
         p5.setRightUpCorner(new Point(128,945));
         p5.setRightDownleftUpCorners();
@@ -233,272 +236,233 @@ public DiGraph<Point> getGraph()
         p8.setRightUpCorner(new Point(215,668));
         p8.setRightDownleftUpCorners();
 
-          departments.add(p1);
-        departments.add(p2);
-        departments.add(p3);
-        departments.add(p4);
-        departments.add(p5);
-        departments.add(p6);
-        departments.add(p7);
-        departments.add(p8);
+
 
 //
 ////        //BULK Department
-//        DepartmentBlock b1 = new DepartmentBlock();
-//        DepartmentBlock b2 = new DepartmentBlock();
-//        DepartmentBlock b3 = new DepartmentBlock();
-//        DepartmentBlock b4 = new DepartmentBlock();
+        DepartmentBlock b1 = new DepartmentBlock();
+        DepartmentBlock b2 = new DepartmentBlock();
+        DepartmentBlock b3 = new DepartmentBlock();
+        DepartmentBlock b4 = new DepartmentBlock();
+
+        b1.setLeftDownCorner(new Point(96,568));
+        b1.setRightUpCorner(new Point(162,533));
+        b1.setRightDownleftUpCorners();
+
+        b2.setLeftDownCorner(new Point(205 ,600));
+        b2.setRightUpCorner(new Point(238,515));
+        b2.setRightDownleftUpCorners();
 //
-//        b1.setLeftDownCorner(new Point(96,568));
-//        b1.setRightUpCorner(new Point(162,533));
-//        b1.setRightDownleftUpCorners();
+        b3.setLeftDownCorner(new Point(96,430));
+        b3.setRightUpCorner(new Point(162,395));
+        b3.setRightDownleftUpCorners();
 //
-//        b2.setLeftDownCorner(new Point(205 ,600));
-//        b2.setRightUpCorner(new Point(238,515));
-//        b2.setRightDownleftUpCorners();
-////
-//        b3.setLeftDownCorner(new Point(96,430));
-//        b3.setRightUpCorner(new Point(162,395));
-//        b3.setRightDownleftUpCorners();
-////
-//        b4.setLeftDownCorner(new Point(205,465));
-//        b4.setRightUpCorner(new Point(238,377));
-//        b4.setRightDownleftUpCorners();
-////
-//        departments.add(b1);
-//        departments.add(b2);
-//        departments.add(b3);
-//        departments.add(b4);
-////
-////        //GROCERY Department
-//        DepartmentBlock g1 = new DepartmentBlock();
-//        DepartmentBlock g2 = new DepartmentBlock();
-//        DepartmentBlock g3 = new DepartmentBlock();
-//        DepartmentBlock g4 = new DepartmentBlock();
-//        DepartmentBlock g5 = new DepartmentBlock();
-//        DepartmentBlock g6 = new DepartmentBlock();
-//        DepartmentBlock g7 = new DepartmentBlock();
-//        DepartmentBlock g8 = new DepartmentBlock();
-//        DepartmentBlock g9 = new DepartmentBlock();
-//        DepartmentBlock g10 = new DepartmentBlock();
-//        DepartmentBlock g11 = new DepartmentBlock();
-////
-//        g1.setLeftDownCorner(new Point(277,1287));
-//        g1.setRightUpCorner(new Point(308,883));
-//        g1.setRightDownleftUpCorners();
+        b4.setLeftDownCorner(new Point(205,465));
+        b4.setRightUpCorner(new Point(238,377));
+        b4.setRightDownleftUpCorners();
 //
-//        g2.setLeftDownCorner(new Point(355,1287));
-//        g2.setRightUpCorner(new Point(385,883));
-//        g2.setRightDownleftUpCorners();
+
 //
-//        g3.setLeftDownCorner(new Point(432,1287));
-//        g3.setRightUpCorner(new Point(461,883));
-//        g3.setRightDownleftUpCorners();
-////
-//        g4.setLeftDownCorner(new Point(509,1287));
-//        g4.setRightUpCorner(new Point(544,883));
-//        g4.setRightDownleftUpCorners();
+//        //GROCERY Department
+        DepartmentBlock g1 = new DepartmentBlock();
+        DepartmentBlock g2 = new DepartmentBlock();
+        DepartmentBlock g3 = new DepartmentBlock();
+        DepartmentBlock g4 = new DepartmentBlock();
+        DepartmentBlock g5 = new DepartmentBlock();
+        DepartmentBlock g6 = new DepartmentBlock();
+        DepartmentBlock g7 = new DepartmentBlock();
+        DepartmentBlock g8 = new DepartmentBlock();
+        DepartmentBlock g9 = new DepartmentBlock();
+        DepartmentBlock g10 = new DepartmentBlock();
+        DepartmentBlock g11 = new DepartmentBlock();
 //
-//        g5.setLeftDownCorner(new Point(277,756));
-//        g5.setRightUpCorner(new Point(308,356));
-//        g5.setRightDownleftUpCorners();
+        g1.setLeftDownCorner(new Point(277,1287));
+        g1.setRightUpCorner(new Point(308,883));
+        g1.setRightDownleftUpCorners();
+
+        g2.setLeftDownCorner(new Point(355,1287));
+        g2.setRightUpCorner(new Point(385,883));
+        g2.setRightDownleftUpCorners();
+
+        g3.setLeftDownCorner(new Point(432,1287));
+        g3.setRightUpCorner(new Point(461,883));
+        g3.setRightDownleftUpCorners();
 //
-//
-//        g6.setLeftDownCorner(new Point(355,756));
-//        g6.setRightUpCorner(new Point(385,356));
-//        g6.setRightDownleftUpCorners();
-//
-//
-//        g7.setLeftDownCorner(new Point(432,756));
-//        g7.setRightUpCorner(new Point(461,356));
-//        g7.setRightDownleftUpCorners();
-//
-//
-//        g8.setLeftDownCorner(new Point(509,756));
-//        g8.setRightUpCorner(new Point(544,356));
-//        g8.setRightDownleftUpCorners();
-//
-//        g9.setLeftDownCorner(new Point(591,756));
-//        g9.setRightUpCorner(new Point(623,356));
-//        g9.setRightDownleftUpCorners();
-//
-//        g10.setLeftDownCorner(new Point(671,756));
-//        g10.setRightUpCorner(new Point(700,356));
-//        g10.setRightDownleftUpCorners();
-//
-//        g11.setLeftDownCorner(new Point(750,756));
-//        g11.setRightUpCorner(new Point(783,356));
-//        g11.setRightDownleftUpCorners();
-//
-//        departments.add(g1);
-//        departments.add(g2);
-//        departments.add(g3);
-//        departments.add(g4);
-//        departments.add(g5);
-//        departments.add(g6);
-//        departments.add(g7);
-//        departments.add(g8);
-//        departments.add(g9);
-//        departments.add(g10);
-//        departments.add(g11);
-//
-//        //SEAFOOD Department
-//        DepartmentBlock s1 = new DepartmentBlock();
-//
-//        s1.setLeftDownCorner(new Point(152,268));
-//        s1.setRightUpCorner(new Point(214,156));
-//        s1.setRightDownleftUpCorners();
-//
-//        departments.add(s1);
-//
-//        //MEAT Department
-//        DepartmentBlock m1 = new DepartmentBlock();
-//        DepartmentBlock m2 = new DepartmentBlock();
-//        DepartmentBlock m3 = new DepartmentBlock();
-//        DepartmentBlock m4 = new DepartmentBlock();
-//
-//        m1.setLeftDownCorner(new Point(267,268));
-//        m1.setRightUpCorner(new Point(296,156));
-//        m1.setRightDownleftUpCorners();
-//
-//        m2.setLeftDownCorner(new Point(341,268));
-//        m2.setRightUpCorner(new Point(373,156));
-//        m2.setRightDownleftUpCorners();
-//
-//        m3.setLeftDownCorner(new Point(420,268));
-//        m3.setRightUpCorner(new Point(447,156));
-//        m3.setRightDownleftUpCorners();
-//
-//        m4.setLeftDownCorner(new Point(497,268));
-//        m4.setRightUpCorner(new Point(529,156));
-//        m4.setRightDownleftUpCorners();
-//
-//        departments.add(m1);
-//        departments.add(m2);
-//        departments.add(m3);
-//        departments.add(m4);
-//
-//
-//        //DAIRY EGGS & CHEASE Department
-//        DepartmentBlock d1 = new DepartmentBlock();
-//        DepartmentBlock d2 = new DepartmentBlock();
-//
-//
-//        d1.setLeftDownCorner(new Point(647,271));
-//        d1.setRightUpCorner(new Point(679,153));
-//        d1.setRightDownleftUpCorners();
-//
-//        d2.setLeftDownCorner(new Point(727,271));
-//        d2.setRightUpCorner(new Point(759,153));
-//        d2.setRightDownleftUpCorners();
-//
-//        departments.add(d1);
-//        departments.add(d2);
-//
-//        //WINE & SPIRITS Department
-//        DepartmentBlock w1 = new DepartmentBlock();
-//        DepartmentBlock w2 = new DepartmentBlock();
-//        DepartmentBlock w3 = new DepartmentBlock();
-//
-//
-//        w1.setLeftDownCorner(new Point(850,203));
-//        w1.setRightUpCorner(new Point(950,156));
-//        w1.setRightDownleftUpCorners();
-//
-//        w2.setLeftDownCorner(new Point(850,312));
-//        w2.setRightUpCorner(new Point(950,260));
-//        w2.setRightDownleftUpCorners();
-//
-//        w3.setLeftDownCorner(new Point(850,418));
-//        w3.setRightUpCorner(new Point(950,370));
-//        w3.setRightDownleftUpCorners();
-//
-//        departments.add(w1);
-//        departments.add(w2);
-//        departments.add(w3);
-//
-////        //BAKERY Department
-//        DepartmentBlock bakery1 = new DepartmentBlock();
-//        DepartmentBlock bakery2 = new DepartmentBlock();
-//        DepartmentBlock bakery3 = new DepartmentBlock();
-//        DepartmentBlock bakery4 = new DepartmentBlock();
-//        DepartmentBlock bakery5 = new DepartmentBlock();
-//        DepartmentBlock bakery6 = new DepartmentBlock();
-//
-//
-//        bakery1.setLeftDownCorner(new Point(853,780));
-//        bakery1.setRightUpCorner(new Point(880,730));
-//        bakery1.setRightDownleftUpCorners();
-//
-//        bakery2.setLeftDownCorner(new Point(921,780));
-//        bakery2.setRightUpCorner(new Point(953,730));
-//        bakery2.setRightDownleftUpCorners();
-//
-//        bakery3.setLeftDownCorner(new Point(853,668));
-//        bakery3.setRightUpCorner(new Point(880,618));
-//        bakery3.setRightDownleftUpCorners();
-//
-//        bakery4.setLeftDownCorner(new Point(921,668));
-//        bakery4.setRightUpCorner(new Point(953,618));
-//        bakery4.setRightDownleftUpCorners();
-//
-//        bakery5.setLeftDownCorner(new Point(853,550));
-//        bakery5.setRightUpCorner(new Point(880,503));
-//        bakery5.setRightDownleftUpCorners();
-//
-//        bakery6.setLeftDownCorner(new Point(921,550));
-//        bakery6.setRightUpCorner(new Point(953,503));
-//        bakery6.setRightDownleftUpCorners();
-//
-//        departments.add(bakery1);
-//        departments.add(bakery2);
-//        departments.add(bakery3);
-//        departments.add(bakery4);
-//        departments.add(bakery5);
-//        departments.add(bakery6);
-//
-//
-//        //DELI & PREPARED FOOD Department
-//        DepartmentBlock deli1 = new DepartmentBlock();
-//        DepartmentBlock deli2 = new DepartmentBlock();
-//        DepartmentBlock deli3 = new DepartmentBlock();
-//
-//        deli1.setLeftDownCorner(new Point(850,933));
-//        deli1.setRightUpCorner(new Point(948,886));
-//        deli1.setRightDownleftUpCorners();
-//
-//        deli2.setLeftDownCorner(new Point(853,1054));
-//        deli2.setRightUpCorner(new Point(948,1006));
-//        deli2.setRightDownleftUpCorners();
-//
-//        deli3.setLeftDownCorner(new Point(853,1174));
-//        deli3.setRightUpCorner(new Point(945,1127));
-//        deli3.setRightDownleftUpCorners();
-//
-//        departments.add(deli1);
-//        departments.add(deli2);
-//        departments.add(deli3);
-//
-////        //FROZEN Department
-//        DepartmentBlock f1 = new DepartmentBlock();
-//        DepartmentBlock f2 = new DepartmentBlock();
-//        DepartmentBlock f3 = new DepartmentBlock();
-//
-//        f1.setLeftDownCorner(new Point(594 ,1289));
-//        f1.setRightUpCorner(new Point(623,886));
-//        f1.setRightDownleftUpCorners();
-//
-//        f2.setLeftDownCorner(new Point(674,1289));
-//        f2.setRightUpCorner(new Point(703,886));
-//        f2.setRightDownleftUpCorners();
-//
-//        f3.setLeftDownCorner(new Point(750,1289));
-//        f3.setRightUpCorner(new Point(773,886));
-//        f3.setRightDownleftUpCorners();
-//
-//        departments.add(f1);
-//        departments.add(f2);
-//        departments.add(f3);
+        g4.setLeftDownCorner(new Point(509,1287));
+        g4.setRightUpCorner(new Point(544,883));
+        g4.setRightDownleftUpCorners();
+
+        g5.setLeftDownCorner(new Point(277,756));
+        g5.setRightUpCorner(new Point(308,356));
+        g5.setRightDownleftUpCorners();
+
+
+        g6.setLeftDownCorner(new Point(355,756));
+        g6.setRightUpCorner(new Point(385,356));
+        g6.setRightDownleftUpCorners();
+
+
+        g7.setLeftDownCorner(new Point(432,756));
+        g7.setRightUpCorner(new Point(461,356));
+        g7.setRightDownleftUpCorners();
+
+
+        g8.setLeftDownCorner(new Point(509,756));
+        g8.setRightUpCorner(new Point(544,356));
+        g8.setRightDownleftUpCorners();
+
+        g9.setLeftDownCorner(new Point(591,756));
+        g9.setRightUpCorner(new Point(623,356));
+        g9.setRightDownleftUpCorners();
+
+        g10.setLeftDownCorner(new Point(671,756));
+        g10.setRightUpCorner(new Point(700,356));
+        g10.setRightDownleftUpCorners();
+
+        g11.setLeftDownCorner(new Point(750,756));
+        g11.setRightUpCorner(new Point(783,356));
+        g11.setRightDownleftUpCorners();
+
+
+        //SEAFOOD Department
+        DepartmentBlock s1 = new DepartmentBlock();
+
+        s1.setLeftDownCorner(new Point(152,268));
+        s1.setRightUpCorner(new Point(214,156));
+        s1.setRightDownleftUpCorners();
+
+
+        //MEAT Department
+        DepartmentBlock m1 = new DepartmentBlock();
+        DepartmentBlock m2 = new DepartmentBlock();
+        DepartmentBlock m3 = new DepartmentBlock();
+        DepartmentBlock m4 = new DepartmentBlock();
+
+        m1.setLeftDownCorner(new Point(267,268));
+        m1.setRightUpCorner(new Point(296,156));
+        m1.setRightDownleftUpCorners();
+
+        m2.setLeftDownCorner(new Point(341,268));
+        m2.setRightUpCorner(new Point(373,156));
+        m2.setRightDownleftUpCorners();
+
+        m3.setLeftDownCorner(new Point(420,268));
+        m3.setRightUpCorner(new Point(447,156));
+        m3.setRightDownleftUpCorners();
+
+        m4.setLeftDownCorner(new Point(497,268));
+        m4.setRightUpCorner(new Point(529,156));
+        m4.setRightDownleftUpCorners();
+
+
+
+        //DAIRY EGGS & CHEASE Department
+        DepartmentBlock d1 = new DepartmentBlock();
+        DepartmentBlock d2 = new DepartmentBlock();
+
+
+        d1.setLeftDownCorner(new Point(647,271));
+        d1.setRightUpCorner(new Point(679,153));
+        d1.setRightDownleftUpCorners();
+
+        d2.setLeftDownCorner(new Point(727,271));
+        d2.setRightUpCorner(new Point(759,153));
+        d2.setRightDownleftUpCorners();
+
+
+
+        //WINE & SPIRITS Department
+        DepartmentBlock w1 = new DepartmentBlock();
+        DepartmentBlock w2 = new DepartmentBlock();
+        DepartmentBlock w3 = new DepartmentBlock();
+
+
+        w1.setLeftDownCorner(new Point(850,203));
+        w1.setRightUpCorner(new Point(950,156));
+        w1.setRightDownleftUpCorners();
+
+        w2.setLeftDownCorner(new Point(850,312));
+        w2.setRightUpCorner(new Point(950,260));
+        w2.setRightDownleftUpCorners();
+
+        w3.setLeftDownCorner(new Point(850,418));
+        w3.setRightUpCorner(new Point(950,370));
+        w3.setRightDownleftUpCorners();
+
+//        //BAKERY Department
+        DepartmentBlock bakery1 = new DepartmentBlock();
+        DepartmentBlock bakery2 = new DepartmentBlock();
+        DepartmentBlock bakery3 = new DepartmentBlock();
+        DepartmentBlock bakery4 = new DepartmentBlock();
+        DepartmentBlock bakery5 = new DepartmentBlock();
+        DepartmentBlock bakery6 = new DepartmentBlock();
+
+
+        bakery1.setLeftDownCorner(new Point(853,780));
+        bakery1.setRightUpCorner(new Point(880,730));
+        bakery1.setRightDownleftUpCorners();
+
+        bakery2.setLeftDownCorner(new Point(921,780));
+        bakery2.setRightUpCorner(new Point(953,730));
+        bakery2.setRightDownleftUpCorners();
+
+        bakery3.setLeftDownCorner(new Point(853,668));
+        bakery3.setRightUpCorner(new Point(880,618));
+        bakery3.setRightDownleftUpCorners();
+
+        bakery4.setLeftDownCorner(new Point(921,668));
+        bakery4.setRightUpCorner(new Point(953,618));
+        bakery4.setRightDownleftUpCorners();
+
+        bakery5.setLeftDownCorner(new Point(853,550));
+        bakery5.setRightUpCorner(new Point(880,503));
+        bakery5.setRightDownleftUpCorners();
+
+        bakery6.setLeftDownCorner(new Point(921,550));
+        bakery6.setRightUpCorner(new Point(953,503));
+        bakery6.setRightDownleftUpCorners();
+
+
+
+
+        //DELI & PREPARED FOOD Department
+        DepartmentBlock deli1 = new DepartmentBlock();
+        DepartmentBlock deli2 = new DepartmentBlock();
+        DepartmentBlock deli3 = new DepartmentBlock();
+
+        deli1.setLeftDownCorner(new Point(850,933));
+        deli1.setRightUpCorner(new Point(948,886));
+        deli1.setRightDownleftUpCorners();
+
+        deli2.setLeftDownCorner(new Point(853,1054));
+        deli2.setRightUpCorner(new Point(948,1006));
+        deli2.setRightDownleftUpCorners();
+
+        deli3.setLeftDownCorner(new Point(853,1174));
+        deli3.setRightUpCorner(new Point(945,1127));
+        deli3.setRightDownleftUpCorners();
+
+
+
+
+        //FROZEN Department
+        DepartmentBlock f1 = new DepartmentBlock();
+        DepartmentBlock f2 = new DepartmentBlock();
+        DepartmentBlock f3 = new DepartmentBlock();
+
+        f1.setLeftDownCorner(new Point(594 ,1289));
+        f1.setRightUpCorner(new Point(623,886));
+        f1.setRightDownleftUpCorners();
+
+        f2.setLeftDownCorner(new Point(674,1289));
+        f2.setRightUpCorner(new Point(703,886));
+        f2.setRightDownleftUpCorners();
+
+        f3.setLeftDownCorner(new Point(750,1289));
+        f3.setRightUpCorner(new Point(773,886));
+        f3.setRightDownleftUpCorners();
+
+
 //
 ////        //CHAIRS Department
 ////        DepartmentBlock cheir1 = new DepartmentBlock();
@@ -534,49 +498,100 @@ public DiGraph<Point> getGraph()
 ////        departments.add(cheir5);
 ////
 ////        //CASHIER Department
-//        DepartmentBlock cashier1 = new DepartmentBlock();
-//        DepartmentBlock cashier2 = new DepartmentBlock();
-//        DepartmentBlock cashier3= new DepartmentBlock();
-//        DepartmentBlock cashier4 = new DepartmentBlock();
-//        DepartmentBlock cashier5 = new DepartmentBlock();
-//        DepartmentBlock cashier6 = new DepartmentBlock();
-//        DepartmentBlock cashier7 = new DepartmentBlock();
-//
-//        cashier1.setLeftDownCorner(new Point(417,1507));
-//        cashier1.setRightUpCorner(new Point(435,1410));
-//        cashier1.setRightDownleftUpCorners();
-//
-//        cashier2.setLeftDownCorner(new Point(473,1507));
-//        cashier2.setRightUpCorner(new Point(491,1410));
-//        cashier2.setRightDownleftUpCorners();
-//
-//        cashier3.setLeftDownCorner(new Point(529,1507));
-//        cashier3.setRightUpCorner(new Point(544,1410));
-//        cashier3.setRightDownleftUpCorners();
-//
-//        cashier4.setLeftDownCorner(new Point(585,1507));
-//        cashier4.setRightUpCorner(new Point(597,1410));
-//        cashier4.setRightDownleftUpCorners();
-//
-//        cashier5.setLeftDownCorner(new Point(638,1507));
-//        cashier5.setRightUpCorner(new Point(653,1410));
-//        cashier5.setRightDownleftUpCorners();
-//
-//        cashier6.setLeftDownCorner(new Point(688,1507));
-//        cashier6.setRightUpCorner(new Point(706,1410));
-//        cashier6.setRightDownleftUpCorners();
-//
-//        cashier7.setLeftDownCorner(new Point(747,1507));
-//        cashier7.setRightUpCorner(new Point(762,1410));
-//        cashier7.setRightDownleftUpCorners();
-//
-//        departments.add(cashier1);
-//        departments.add(cashier2);
-//        departments.add(cashier3);
-//        departments.add(cashier4);
-//        departments.add(cashier5);
-//        departments.add(cashier6);
-//        departments.add(cashier7);
+        DepartmentBlock cashier1 = new DepartmentBlock();
+        DepartmentBlock cashier2 = new DepartmentBlock();
+        DepartmentBlock cashier3= new DepartmentBlock();
+        DepartmentBlock cashier4 = new DepartmentBlock();
+        DepartmentBlock cashier5 = new DepartmentBlock();
+        DepartmentBlock cashier6 = new DepartmentBlock();
+        DepartmentBlock cashier7 = new DepartmentBlock();
+
+        cashier1.setLeftDownCorner(new Point(417,1507));
+        cashier1.setRightUpCorner(new Point(435,1410));
+        cashier1.setRightDownleftUpCorners();
+
+        cashier2.setLeftDownCorner(new Point(473,1507));
+        cashier2.setRightUpCorner(new Point(491,1410));
+        cashier2.setRightDownleftUpCorners();
+
+        cashier3.setLeftDownCorner(new Point(529,1507));
+        cashier3.setRightUpCorner(new Point(544,1410));
+        cashier3.setRightDownleftUpCorners();
+
+        cashier4.setLeftDownCorner(new Point(585,1507));
+        cashier4.setRightUpCorner(new Point(597,1410));
+        cashier4.setRightDownleftUpCorners();
+
+        cashier5.setLeftDownCorner(new Point(638,1507));
+        cashier5.setRightUpCorner(new Point(653,1410));
+        cashier5.setRightDownleftUpCorners();
+
+        cashier6.setLeftDownCorner(new Point(688,1507));
+        cashier6.setRightUpCorner(new Point(706,1410));
+        cashier6.setRightDownleftUpCorners();
+
+        cashier7.setLeftDownCorner(new Point(747,1507));
+        cashier7.setRightUpCorner(new Point(762,1410));
+        cashier7.setRightDownleftUpCorners();
+
+
+        departments.add(p1);
+          departments.add(p2);
+        departments.add(p3);
+        departments.add(p4);
+        departments.add(p5);
+        departments.add(p6);
+        departments.add(p7);
+        departments.add(p8);
+
+        departments.add(b1);
+        departments.add(b2);
+        departments.add(b3);
+        departments.add(b4);
+
+        departments.add(g1);
+        departments.add(g2);
+        departments.add(g3);
+        departments.add(g4);
+        departments.add(g5);
+        departments.add(g6);
+        departments.add(g7);
+        departments.add(g8);
+        departments.add(g9);
+        departments.add(g10);
+        departments.add(g11);
+
+        departments.add(s1);
+
+        departments.add(m1);
+        departments.add(m2);
+        departments.add(m3);
+        departments.add(m4);
+        departments.add(d1);
+        departments.add(d2);
+        departments.add(w1);
+        departments.add(w2);
+        departments.add(w3);
+
+        departments.add(bakery1);
+        departments.add(bakery2);
+        departments.add(bakery3);
+        departments.add(bakery4);
+        departments.add(bakery5);
+        departments.add(bakery6);
+        departments.add(deli1);
+        departments.add(deli2);
+        departments.add(deli3);
+        departments.add(f1);
+        departments.add(f2);
+        departments.add(f3);
+        departments.add(cashier1);
+        departments.add(cashier2);
+        departments.add(cashier3);
+        departments.add(cashier4);
+        departments.add(cashier5);
+        departments.add(cashier6);
+        departments.add(cashier7);
 
     }
 

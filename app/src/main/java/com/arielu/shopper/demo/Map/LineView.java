@@ -47,7 +47,7 @@ public class LineView extends View {
         paintBeacons.setColor(Color.MAGENTA);
 
         paintBeaconsLines.setColor(Color.BLACK);
-        paintBeacons.setStrokeWidth(7);
+        paintBeacons.setStrokeWidth(12);
 
         paintDepartments.setColor(Color.BLACK);
         paintDepartments.setStrokeWidth(13);
