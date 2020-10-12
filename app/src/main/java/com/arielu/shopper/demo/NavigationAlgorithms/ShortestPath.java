@@ -137,7 +137,6 @@ public class ShortestPath
     //use doIntersect function to build only the right edges
     //use DiGraph.add to build full graph with edges
     public DiGraph<Point> buildFullGraph(){
-
         ArrayList<Point> graphNodes = addGraphNodes();
         initDepartments();
         for(int a = 0; a < graphNodes.size(); a++){

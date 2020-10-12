@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.arielu.shopper.demo.NavigationAlgorithms.ShortestPath;
 
+import com.arielu.shopper.demo.NavigationElements.Point;
 import com.arielu.shopper.demo.externalHardware.Beacon;
 
 import java.util.ArrayList;
@@ -22,81 +23,60 @@ public class LineView extends View {
     private Paint paintBeaconsLines = new Paint();
     private Paint paintDepartments = new Paint();
     private Paint paintDepartmentsLines = new Paint();
-
+    private Paint circlePaint = new Paint();
+    private BeaconSetter beaconSetter = new BeaconSetter();
     public float fixWidth;
     public float fixHeight;
 
     private ArrayList<Line> lines  = new ArrayList<>() ;
     private ArrayList<Line> beaconLines  = new ArrayList<>() ;
     private ArrayList<Line> departmentBlockLines  = new ArrayList<>() ;
-
+    private int radius = 90 ;
     public LineView(Context context) {
         super(context);
     }
-
+    boolean firstDraw = true ;
     @Override
     protected void onDraw(Canvas canvas) {
         ShortestPath shortestPath = new ShortestPath() ;
         shortestPath.initDepartments();
         paintLines.setColor(Color.BLUE);
-        paintLines.setStrokeWidth(7);
-
         paintPoints.setColor(Color.RED);
-        paintPoints.setStrokeWidth(15);
-
-        paintBeacons.setColor(Color.MAGENTA);
-        paintBeacons.setStrokeWidth(12);
-
+        paintBeacons.setColor(Color.BLUE);
         paintBeaconsLines.setColor(Color.BLACK);
-        paintBeaconsLines.setStrokeWidth(8);
-
         paintDepartments.setColor(Color.BLACK);
-        paintDepartments.setStrokeWidth(13);
         paintDepartmentsLines.setColor(Color.RED);
+
+        paintBeaconsLines.setStrokeWidth(5);
+        paintBeacons.setStrokeWidth(12);
+        paintPoints.setStrokeWidth(15);
+        paintLines.setStrokeWidth(7);
+        circlePaint.setStrokeWidth(2);
+        paintDepartments.setStrokeWidth(13);
         paintDepartmentsLines.setStrokeWidth(7);
 
+        circlePaint.setStyle(Paint.Style.STROKE);
+        circlePaint.setColor(Color.parseColor("#777170"));
+       if (firstDraw) {
+           beaconSetter.init();
+           firstDraw = false ;
+       }
 
-        fixWidth = (float) this.getBackground().getIntrinsicWidth();
-        fixHeight = (float) this.getBackground().getIntrinsicHeight();
 
         //draw lines
-        for (int i = 1; i < lines.size() ; i++) {
-            PointF pointA = new PointF();
-            PointF pointB = new PointF();
+        drawRouts(canvas);
 
-            pointA.x = lines.get(i).pointA.x ;
-            pointA.y = lines.get(i).pointA.y ;
-            pointB.x = lines.get(i).pointB.x ;
-            pointB.y = lines.get(i).pointB.y ;
-
-//            canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintLines);
-            canvas.drawPoint(pointA.x, pointA.y, paintPoints);
-            canvas.drawPoint(pointB.x, pointB.y, paintPoints);
-        }
-
-        for (int i = 1; i < beaconLines.size() ; i++) {
-            PointF pointA = new PointF();
-            PointF pointB = new PointF();
-
-            pointA.x = beaconLines.get(i).pointA.x ;
-            pointA.y = beaconLines.get(i).pointA.y;
-            pointB.x = beaconLines.get(i).pointB.x;
-            pointB.y = beaconLines.get(i).pointB.y ;
-
-            canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintBeaconsLines);
-            canvas.drawPoint(pointA.x, pointA.y, paintBeacons);
-            canvas.drawPoint(pointB.x, pointB.y, paintBeacons);
-        }
-
-        BeaconSetter beaconSetter = new BeaconSetter();
-        beaconSetter.init();
+        drawBeaconsRouts(canvas) ;
         // draw beacons
         drawBeacons(canvas,beaconSetter);
-        //draw points
+        drawBeaconsRanges(canvas) ;
 
 //        drawDepatments(shortestPath.getDepartments() , canvas) ;
         super.onDraw(canvas);
     }
+
+
+
     private void drawBeacons(Canvas canvas,BeaconSetter beaconSetter)
     {
         PointF beacon_draw;
@@ -105,7 +85,12 @@ public class LineView extends View {
             beacon_draw = new PointF();
             beacon_draw.x = beacon.getX() ;//* (420/160) - 160;
             beacon_draw.y = beacon.getY() ;//* (420/160) + 320;
+            if(beacon.getIsInRange() == true)
+            {
+                paintBeacons.setColor(Color.GREEN);
+            }
             canvas.drawPoint(beacon_draw.x  ,beacon_draw.y ,paintBeacons);
+            paintBeacons.setColor(Color.BLUE);
         }
     }
 
@@ -145,6 +130,65 @@ public class LineView extends View {
 //    }
 
 
+
+private void drawBeaconsRanges(Canvas canvas)
+{
+
+    for (Beacon beacon: beaconSetter.beacons) {
+        if(beacon.getIsInRange() == true)
+        {
+            circlePaint.setColor(Color.RED);
+            canvas.drawCircle(beacon.getX() , beacon.getY() , radius , circlePaint);
+        }
+
+        circlePaint.setColor(Color.parseColor("#777170"));
+    }
+}
+
+private void drawBeaconsRouts(Canvas canvas)
+{
+    for (int i = 1; i < beaconLines.size() ; i++) {
+        PointF pointA = new PointF();
+        PointF pointB = new PointF();
+
+        pointA.x = beaconLines.get(i).pointA.x ;
+        pointA.y = beaconLines.get(i).pointA.y;
+        pointB.x = beaconLines.get(i).pointB.x;
+        pointB.y = beaconLines.get(i).pointB.y ;
+
+        canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintBeaconsLines);
+//        canvas.drawPoint(pointA.x, pointA.y, paintBeacons);
+//        canvas.drawPoint(pointB.x, pointB.y, paintBeacons);
+    }
+}
+
+private void drawRouts(Canvas canvas)
+{
+    for (int i = 1; i < lines.size() ; i++) {
+        PointF pointA = new PointF();
+        PointF pointB = new PointF();
+
+        pointA.x = lines.get(i).pointA.x ;
+        pointA.y = lines.get(i).pointA.y ;
+        pointB.x = lines.get(i).pointB.x ;
+        pointB.y = lines.get(i).pointB.y ;
+
+      //  canvas.drawLine(pointA.x, pointA.y, pointB.x, pointB.y, paintLines);
+        canvas.drawPoint(pointA.x, pointA.y, paintPoints);
+        canvas.drawPoint(pointB.x, pointB.y, paintPoints);
+    }
+}
+
+
+
+public void customerLocation(Point point , ArrayList<Beacon> beacons)
+{
+    beaconSetter.setBeaconsArraylist(beacons);
+    for (Beacon beacon:beaconSetter.beacons) {
+        beacon.changeIfInRange(point , radius);
+    }
+   draw();
+}
     public void draw()
     {
         invalidate();

@@ -4,6 +4,8 @@ import com.arielu.shopper.demo.NavigationElements.Point;
 
 public class Beacon extends Point{
 
+    boolean isInRange ;
+
     public Beacon(int x, int y) {
         super(x, y);
     }
@@ -14,6 +16,38 @@ public class Beacon extends Point{
 
     public Beacon(Point point) {
         super(point);
+    }
+
+
+    public void setFalse()
+    {
+        isInRange = false ;
+    }
+
+    public void setTrue()
+    {
+        isInRange = true ;
+    }
+
+    public boolean getIsInRange()
+    {
+        return isInRange ;
+    }
+
+    public void changeIfInRange(Point point , int radius)
+    {
+       int deltaX = this.getX() - point.getX() ;
+       int deltaY = this.getY() - point.getY() ;
+       int sqrtDeltaX = (int) Math.pow(deltaX , 2);
+       int sqrtDeltaY = (int) Math.pow(deltaY , 2);
+       double distance = Math.sqrt(sqrtDeltaX + sqrtDeltaY) ;
+
+       if(distance < radius)
+       {
+           setTrue();
+       }
+       else
+           setFalse();
     }
 
 

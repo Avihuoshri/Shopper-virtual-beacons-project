@@ -10,8 +10,7 @@ import java.util.Map;
 public class BeaconSetter {
 
     public ArrayList<Beacon> beacons;
-    private Map<Triple,Point> beacon_entries;
-    private float conversionRatio;
+
 
 public void init()
 {
@@ -40,13 +39,13 @@ public void init()
         }
     }
 
-    private int convertPixelsDiff(int pixelDiff)
-    {
-        float temp = pixelDiff/conversionRatio;
-        return (int)temp;
-    }
 
-    private void initBeacons() {
+public void setBeaconsArraylist(ArrayList<Beacon> beacons)
+{
+    this.beacons = beacons ;
+}
+
+    private  void initBeacons() {
         beacons = new ArrayList<>();
         Beacon b1 = new Beacon(326 , 1542); //290 , 1542
         Beacon b2 = new Beacon(815 , 1542); // 841 , 1542
@@ -130,9 +129,6 @@ public void init()
         Beacon b80 = new Beacon(697, 303 );
         Beacon b81 = new Beacon(697, 303 );
 
-        beacons.add(b77);
-        beacons.add(b78);
-        beacons.add(b79);
 
         beacons.add(b1);
         beacons.add(b2);
@@ -148,7 +144,7 @@ public void init()
         beacons.add(b12);
         beacons.add(b13);
         beacons.add(b14);
-       beacons.add(b15);
+        beacons.add(b15);
         beacons.add(b16);
         beacons.add(b17);
         beacons.add(b18);
@@ -210,6 +206,12 @@ public void init()
         beacons.add(b74);
         beacons.add(b75);
         beacons.add(b76);
+        beacons.add(b77);
+        beacons.add(b78);
+        beacons.add(b79);
+
+
+
     }
 
 
