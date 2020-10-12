@@ -31,11 +31,12 @@ public class LineView extends View {
     private ArrayList<Line> lines  = new ArrayList<>() ;
     private ArrayList<Line> beaconLines  = new ArrayList<>() ;
     private ArrayList<Line> departmentBlockLines  = new ArrayList<>() ;
-    private int radius = 90 ;
+    boolean firstDraw = true ;
+    private int radius = 65 ;
     public LineView(Context context) {
         super(context);
     }
-    boolean firstDraw = true ;
+
     @Override
     protected void onDraw(Canvas canvas) {
         ShortestPath shortestPath = new ShortestPath() ;
@@ -88,9 +89,11 @@ public class LineView extends View {
             if(beacon.getIsInRange() == true)
             {
                 paintBeacons.setColor(Color.GREEN);
+                paintBeacons.setStrokeWidth(20);
             }
             canvas.drawPoint(beacon_draw.x  ,beacon_draw.y ,paintBeacons);
             paintBeacons.setColor(Color.BLUE);
+            paintBeacons.setStrokeWidth(12);
         }
     }
 

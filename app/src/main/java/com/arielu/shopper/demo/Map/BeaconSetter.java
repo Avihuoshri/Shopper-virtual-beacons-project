@@ -108,7 +108,7 @@ public void setBeaconsArraylist(ArrayList<Beacon> beacons)
         Beacon b59 = new Beacon(815 , 341);
         Beacon b60 = new Beacon(986 , 341);
         Beacon b61 = new Beacon(117 , 118);
-        Beacon b62 = new Beacon(229, 118);
+        Beacon b62 = new Beacon(255, 118);
         Beacon b63 = new Beacon(326 , 118);
         Beacon b64 = new Beacon(402 , 118);
         Beacon b65 = new Beacon(479, 118);

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.arielu.shopper.demo.Map.BeaconSetter;
 import com.arielu.shopper.demo.Map.Line;
 import com.arielu.shopper.demo.Map.LineView;
+import com.arielu.shopper.demo.Map.SaleUpdates;
 import com.arielu.shopper.demo.NavigationAlgorithms.DiGraph;
 import com.arielu.shopper.demo.NavigationAlgorithms.ShortestPath;
 import com.arielu.shopper.demo.NavigationElements.Path;
@@ -56,10 +57,17 @@ public class DrawMapActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event) {
         // MotionEvent object holds X-Y values
         if(event.getAction() == MotionEvent.ACTION_DOWN) {
+            SaleUpdates saleUpdates = new SaleUpdates() ;
+            String saleMessage ;
             String text = "Customer at position x = " + event.getX() + " and y = " + (event.getY() - 63);
             Point pixelPoint = new Point((int) event.getX() ,  (int) event.getY() - 63);
             mlineView.customerLocation(pixelPoint , beaconSetter.beacons) ;
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+
+            saleMessage = saleUpdates.checkForUpdates(pixelPoint) ;
+            if(saleMessage != "") {
+                Toast.makeText(this, saleMessage , Toast.LENGTH_LONG).show();
+            }
         }
 
         return super.onTouchEvent(event);
