@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">102585912131-j17bvsaae8171fq18v9ej10vb5pvnjl0.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://shopper-ab444.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">102585912131</string>
+    <string name="google_api_key" translatable="false">AIzaSyAP4Xg9znUWUCZ1HQ1wQcxoizl099jp37I</string>
+    <string name="google_app_id" translatable="false">1:102585912131:android:0b911b8f0aac4812ed7df6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAP4Xg9znUWUCZ1HQ1wQcxoizl099jp37I</string>
+    <string name="google_storage_bucket" translatable="false">shopper-ab444.appspot.com</string>
+    <string name="project_id" translatable="false">shopper-ab444</string>
+</resources>

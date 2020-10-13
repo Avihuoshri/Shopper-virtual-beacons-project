@@ -1,7 +1,6 @@
 package com.arielu.shopper.demo.pinnedsectionlistview;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.arielu.shopper.demo.R;
-import com.arielu.shopper.demo.classes.Product;
 import com.arielu.shopper.demo.models.SessionProduct;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;

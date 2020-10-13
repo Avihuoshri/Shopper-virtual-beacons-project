@@ -12,9 +12,7 @@ import com.arielu.shopper.demo.classes.Product;
 import com.arielu.shopper.demo.models.SessionProduct;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class ListAdapter2 extends BaseExpandableListAdapter {
     private Context context;

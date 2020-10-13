@@ -3,7 +3,6 @@ package com.arielu.shopper.demo.database;
 
 import android.util.Log;
 
-import com.arielu.shopper.demo.Item;
 import com.arielu.shopper.demo.classes.Branch;
 import com.arielu.shopper.demo.classes.Shopping_list;
 import com.arielu.shopper.demo.models.Message;
@@ -28,7 +27,6 @@ import java.util.Map;
 import androidx.annotation.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
-import io.reactivex.rxjava3.subjects.Subject;
 
 @Deprecated
 final public class Firebase {
@@ -136,6 +134,7 @@ final public class Firebase {
                         p.setProductImageUrl(prod_data.get("productImageUrl"));
                         p.setProductManufacturer(prod_data.get("productManufacturer"));
                         p.setProductName(prod_data.get("productName"));
+                        p.setProductLocation(prod_data.get("productLocation"));
                     }
 
                     p.setProductPrice(spf.getPrice());
@@ -181,6 +180,7 @@ final public class Firebase {
                             store_prod = new StoreProductRef();
                             store_prod.setProductCode((String) parsed_data.get("productCode"));
                             store_prod.setPrice((Double) parsed_data.get("price"));
+                            store_prod.setProductLocation((String) parsed_data.get("productLocation"));
                         }
 
                         o.onNext(store_prod);

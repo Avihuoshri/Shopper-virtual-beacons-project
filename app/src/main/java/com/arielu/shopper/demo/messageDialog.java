@@ -12,13 +12,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-import com.arielu.shopper.demo.database.Firebase;
-import com.arielu.shopper.demo.database.Firebase2;
 import com.arielu.shopper.demo.models.Message;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class messageDialog extends AppCompatDialogFragment {
 

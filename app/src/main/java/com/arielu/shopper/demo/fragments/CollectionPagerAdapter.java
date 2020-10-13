@@ -1,9 +1,6 @@
 package com.arielu.shopper.demo.fragments;
 
-import com.arielu.shopper.demo.classes.Shopping_list;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

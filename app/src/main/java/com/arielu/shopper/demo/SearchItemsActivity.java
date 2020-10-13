@@ -2,7 +2,6 @@ package com.arielu.shopper.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-import io.reactivex.rxjava3.core.Observable;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,11 +13,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.arielu.shopper.demo.database.Firebase;
 import com.arielu.shopper.demo.classes.Product;
 import com.arielu.shopper.demo.database.Firebase2;
 import com.arielu.shopper.demo.models.SessionProduct;
-import com.arielu.shopper.demo.utilities.ObserverFirebaseTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +31,6 @@ public class SearchItemsActivity extends AppCompatActivity implements DialogAddP
 
     // UI elements //
     private ListView lv_products_filtered;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +68,6 @@ public class SearchItemsActivity extends AppCompatActivity implements DialogAddP
             if(sv_search.getQuery().length() > 0)
                 sv_search.setQuery(currSearchQuery,true);
         });
-
     }
 
     protected void LinkUI()
@@ -129,6 +124,7 @@ public class SearchItemsActivity extends AppCompatActivity implements DialogAddP
         Intent returnIntent = new Intent();
         returnIntent.putExtra("result",sessProd.toBundle()); // using parcelable instead of serializable.
         setResult(Activity.RESULT_OK,returnIntent);
+
         finish(); // reload this activity from scratch if opened again, do not preserve data.
     }
 
